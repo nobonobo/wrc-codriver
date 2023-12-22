@@ -62,6 +62,7 @@ func init() {
 		"water-splash",
 		"left-entry-chicane",
 		"right-entry-chicane",
+		"straight",
 		"finish",
 		"sample",
 	}
@@ -88,10 +89,11 @@ func init() {
 		"350",
 	}
 	icons := []string{
-		"care-bridge",
+		"bridge",
 		"dont-cut",
 		"cut",
 		"caution",
+		"terrible-caution",
 		"narrow",
 		"widen",
 		"twisty",
@@ -220,8 +222,8 @@ func markPreProcess(img *gocv.Mat) {
 	//gocv.DetailEnhance(*img, img, 20, 0.1)
 	gocv.CvtColor(*img, img, gocv.ColorBGRToGray)
 	//gocv.GaussianBlur(*img, img, image.Point{X: 5, Y: 5}, 0, 0, gocv.BorderDefault)
-	//gocv.Normalize(*img, img, 0, 255, gocv.NormMinMax)
-	gocv.AdaptiveThreshold(*img, img, 255, gocv.AdaptiveThresholdGaussian, gocv.ThresholdBinary, 9, 10)
+	gocv.Normalize(*img, img, 0, 255, gocv.NormMinMax)
+	gocv.AdaptiveThreshold(*img, img, 255, gocv.AdaptiveThresholdGaussian, gocv.ThresholdBinary, 11, 10)
 	if iconMask.Empty() {
 		mask = gocv.IMRead(filepath.Join("assets", "mask", "mask.png"), gocv.IMReadColor)
 		gocv.CvtColor(mask, &mask, gocv.ColorBGRToGray)
