@@ -1,0 +1,237 @@
+Monte Carlo
+La Bollène-Vésubie - Peïra Cava (18.51 km) Tarmac - 100%
+Peïra Cava - La Bollène-Vésubie (18.18 km )Tarmac - 100%
+La Bollène-Vésubie - Col de Turini (9.21 km) Tarmac - 100%`
+Pra d'Alart (8.88 km) Tarmac - 100%
+La Maïris (9.30 km) Tarmac - 100%
+Baisse de Patronel (9.30 km) Tarmac - 100%
+Saint-Léger-les-Mélèzes - La Bâtie-Neuve (16.79 km) Tarmac - 100%
+La Bâtie-Neuve - Saint-Léger-les-Mélèzes (16.64 km) Tarmac - 100%
+Moissière (8.18 km) Tarmac - 100%
+Ancelle (8.03 km) Tarmac - 100%
+Ravin de Coste Belle (8.60 km) Tarmac - 100%
+Les Borels (8.60 km) Tarmac - 100%
+
+Sweden
+Hof-Finnskog (21.47 km) Snow - 100%
+Åsnes (21.46 km) Snow - 100%
+Spikbrenna (11.07 km) Snow - 100%
+Lauksjøen (10.95 km) Snow - 100%
+Åslia (10.39 km) Snow - 100%
+Knapptjernet (10.51 km) Snow - 100%
+Vargasen (8.24 km) Snow - 100%
+Lövstaholm (8.24 km) Snow - 100%
+Älgsjön (3.37 km) Snow - 100%
+Ekshärad (3.37 km) Snow - 100%
+Stora Jangen (4.86 km) Snow - 100%
+Sunne (4.86 km) Snow - 100%
+
+Mexico
+El Chocolate (26.68 km) Gravel = 92% Dirt = 5% Tarmac = 3%
+Otates (24.74 km) Gravel = 92% Dirt = 5% Tarmac = 3%
+Ortega (13.10 km) Gravel = 91% Dirt = 7% Tarmac = 2%
+Las Minas (10.95 km) Gravel = 92% Dirt = 6% Tarmac = 2%
+Ibarrilla (11.46 km) Gravel = 94% Sand = 2% Tarmac = 4%
+Derramadero (12.92 km) Gravel = 88% Dirt = 9% Tarmac = 3%
+El Brinco (7.18 km) Gravel = 92% Dirt = 6% Tarmac = 2%
+Guanajuatito (10.51 km) Gravel = 89% Dirt = 6% Tarmac = 5%
+Alfaro (10.62 km) Gravel = 92% Sand = 4% Tarmac = 4%
+Mesa Cuata (8.00 km) Gravel = 90% Sand = 3% Tarmac = 7%
+San Diego (8.80 km) Gravel = 98% Dirt = 1% Sand = 1%
+El Mosquito (5.78 km) Gravel = 97% Dirt = 1% Sand = 2%
+
+Croatia
+Bliznec (25.56 km) Tarmac - 100%
+Trakošćan (25.56 km) Tarmac - 100%
+Vrbno (12.70 km) Tarmac - 100%
+Zagorska Sela (12.70 km) Tarmac - 100%
+Kumrovec (12.94 km) Tarmac - 100%
+Grdanjci (12.86 km) Tarmac - 100%
+Stojdraga (10.24 km) Tarmac - 100%
+Mali Lipovec (10.24 km) Tarmac - 100%
+Hartje (7.79 km) Tarmac - 100%
+Kostanjevac (8.70 km) Tarmac - 100%
+Krašić (8.77 km) Tarmac - 100%
+Petruš Vrh (8.77 km) Tarmac - 100%
+
+Portugal
+Baião (30.32 km) Gravel = 82% Tarmac = 16% Cobblestone = 2%
+Caminha (31.21 km) Gravel = 79% Tarmac = 19% Cobblestone = 2%
+Fridão (16.72 km) Gravel = 88% Tarmac =10% Cobblestone = 2%
+Marão (15.12 km) Gravel = 68% Tarmac =30% Cobblestone =2%
+Ponte de Lima (14.77 km) Gravel = 69% Tarmac = 29% Cobblestone = 2%
+Viana do Castelo (7.87 km) Gravel = 95% Tarmac =2% Cobblestone = 3%
+Ervideiro (7.30 km) Gravel = 96% Tarmac = 2% Cobblestone = 2%
+Celeiro (8.18 km) Gravel = 96% Tarmac = 2% Cobblestone = 2%
+Touca (7.51 km) Gravel = 92% Tarmac = 6% Cobblestone = 2%
+Vila Boa (7.39 km) Gravel = 72% Tarmac = 26% Cobblestone = 2%
+Carrazedo (7.48 km) Gravel = 75% Tarmac = 22% Cobblestone = 3%
+Anjos (7.39 km) Gravel = 65% Tarmac = 35%
+
+Sardegna
+Rena Majore (31.53 km) Gravel = 82% Sand = 14% Tarmac = 4%
+Monte Olia (31.62 km) Gravel = 82% Sand = 14% Tarmac = 4%
+Littichedda (13.30 km) Gravel = 68% Sand = 23% Tarmac =9%
+Ala del Sardi (18.22 km) Gravel = 92% Sand = 1% Tarmac =7%
+Mamone (16.45 km) Gravel = 96% Tarmac = 4%
+Li Pinnenti (7.60 km) Gravel = 59% Sand = 40% Tarmac =1%
+Malti (7.73 km) Gravel = 57% Sand = 39% Tarmac = 4%
+Bassacutena (7.49 km) Gravel = 71% Sand = 16% Tarmac = 13%
+Bortigiadas (9.02 km) Gravel = 94% Tarmac =6%
+Sa Mela (9.13 km) Gravel = 100%
+Monte Muvri (7.51 km) Gravel = 100%
+Monte Acuto (7.39 km) Gravel = 100%
+
+Kenya
+Malewa (9.70 km) Gravel = 82% Rock = 14% Dirt = 4%
+Tarambete (9.63 km) Gravel = 82% Rock = 14% Dirt = 4%
+Moi North (5.46 km) Gravel = 83% Rock = 12% Dirt = 5%
+Marula (5.48 km) Gravel = 82% Rock = 13% Dirt = 5%
+Wileli (4.92 km) Gravel = 85% Rock = 12% Dirt = 3%
+Kingono (4.41 km) Gravel = 82% Rock = 12% Dirt = 3%
+Soysambu (20.67 km) Gravel = 51% Sand = 35% Dirt = 14%
+Mbaruk (20.23 km) Gravel = 50% Sand = 36% Dirt = 14%
+Sugunoi (9.74 km) Gravel = 32% Sand = 54% Dirt = 14%
+Nakuru (9.98 km) Gravel = 33% Sand = 53% Dirt = 14%
+Kanyawa (10.70 km) Gravel = 64% Sand = 21% Dirt = 15%
+Kanyawa - Nakura (10.69 km)Gravel = 64% Sand = 20% Dirt = 16%
+
+Estonia
+Otepää (17.07 km) Gravel = 88% Dirt = 12%
+Rebaste (17.07 km) Gravel = 88% Dirt = 12%
+Nüpli (8.60 km) Gravel = 91% Dirt = 9%
+Truuta (8.60 km) Gravel = 91% Dirt = 9%
+Koigu (8.47 km) Gravel = 82% Dirt = 18%
+Kooraste (8.47 km) Gravel = 82% Dirt = 18%
+Elva (11.82 km) Gravel = 80% Tarmac = 11% Dirt = 9%
+Metsalaane (11.56 km) Gravel = 80% Tarmac = 11% Dirt = 9%
+Vahessaare (6.17 km) Gravel = 81% Tarmac - 8%- Dirt = 11%
+Külaaseme (6.17 km) Gravel = 80% Tarmac = 8% Dirt= 12%
+Vissi (5.63 km) Gravel = 78% Tarmac = 13% Dirt = 9%
+Vellavere (5.63 km) Gravel = 79% Tarmac = 13% Dirt = 8%
+
+Finland
+Leustu (11.09 km) Gravel = 88% Dirt = 12%
+Lahdenkyla (11.00 km) Gravel = 88% Dirt = 12%
+Saakoski (4.83 km) Gravel = 91% Dirt = 9%
+Maahi (4.73 km) Gravel = 100%
+Painna (6.41 km) Gravel = 100%
+Peltola (6.14 km) Gravel = 100%
+Paijala (22.92 km) Gravel = 100%
+Ruokolahti (22.90 km) Gravel = 100%
+Honkanen (10.41 km) Gravel = 100%
+Venkajarvi (10.35 km) Gravel = 100%
+Vehmas (12.57 km) Gravel = 100%
+Hatanpaa (12.50 km) Gravel = 100%
+
+Greece
+Gravia (24.64 km) Dirt = 80% Gravel = 20%
+Prosilio (24.64 km) Dirt = 80% Gravel = 20%
+Mariolata (13.51 km) Dirt =64% Gravel = 36%
+Karoutes (13.51 km) Dirt = 64% Gravel = 36%
+Viniani (13.51 km) Dirt = 100%
+Delphi (11.12 km) Dirt = 100%
+Eptalofos (10.39 km) Dirt = 80% Gravel = 20%
+Lilea (10.39 km) Dirt = 80% Gravel = 20%
+Parnassós (5.57 km) Dirt = 46% Gravel = 54%
+Bauxites (5.57 km) Dirt= 46% Gravel = 54%
+Drosochori (5.63 km) Dirt = 100%
+Amfissa (8.68 km) Dirt = 100%
+
+Chile
+Bio Bío (34.72 km) Gravel = 100%
+Arauco (34.79 km) Gravel = 100%
+Coronel (17.97 km) Gravel = 100%
+Lota (16.73 km) Gravel = 100%
+Santa Juana (16.87 km) Gravel = 100%
+Los Angeles (10.79 km) Gravel = 100%
+San Rosendo (10.08 km) Gravel = 100%
+Laja (7.87 km) Gravel = 100%
+Yumbel (7.75 km) Gravel = 100%
+Florida (8.21 km) Gravel = 100%
+Hualqui (8.09 km) Gravel = 100%
+Reputo (8.53 km) Gravel = 100%
+
+Japan
+Lake Mikawa (19.89 km) Tarmac - 100%
+Kudarisawa (19.88 km) Tarmac = 100%
+Oninotaira (11.38 km) Tarmac - 100%
+Okuwacho (11.37 km) Tarmac - 100%
+Habu Dam (10.27 km) Tarmac - 100%
+Habucho (10.28 km) Tarmac - 100%
+Nenoue Plateau (13.74 km) Tarmac - 100%
+Tegano (13.74 km) Tarmac - 100%
+Higashino (6.92 km) Tarmac - 100%
+Hokono Lake (6.92 km) Tarmac - 100%
+Nenoue Highlands (6.81 km)Tarmac - 100%
+Moltifao (6.81 km) Tarmac - 100%
+
+Mediterraneo (Fictional)
+Asco (29.20 km) Tarmac = 100%
+Ponte (28.63 km) Tarmac = 100%
+Monte Cinto (15.15 km) Tarmac = 100%
+Albarello (16.16 km) Tarmac = 100%
+Capannace (20.45 km) Tarmac = 100%
+Serra Di Cuzzioli (7.66 km) Tarmac = 100%
+Maririe (8.47 km) Tarmac = 100%
+Poggiola (8.47 km) Tarmac = 100%
+Monte Alloradu (10.74 km) Tarmac = 100%
+Ravin de Finelio (9.46 km) Tarmac = 100%
+Cabanella (10.09 km) Tarmac = 100%
+Moltifao (11.17 km) Tarmac = 100%
+
+Pacifico (Fictional)
+Talao (31.44 km) Gravel = 99% Dirt = 1%
+Talanghilirair (32.40 km) Gravel = 99% Dirt = 1%
+SungaiKunit (14.58 km) Gravel = 99% Dirt = 1%
+Sangir Balai Janggo (15.53 km) Gravel = 99% Dirt = 1%
+South Solok (16.87 km) Gravel = 99% Dirt = 1%
+Kebun Raya Solok (8.70 km) Gravel = 98% Dirt = 2%
+Batukangkung (8.76 km) Gravel = 98% Dirt = 2%
+Abai (5.37 km) Gravel = 98% Dirt = 2%
+Moearaikoer (6.34 km) Gravel = 99% Dirt = 1%
+Bidaralam (7.73 km) Gravel = 99% Dirt = 1%
+Loeboekmalaka (7.73 km) Gravel = 99% Dirt = 1%
+Gunung Tujuh (9.14 km) Gravel = 99% Dirt = 1%
+
+Oceania (Fictional)
+Ruakaka (10.98 km) Gravel = 98% Concrete = 2%
+Doctors Hill (10.98 km) Gravel = 98% Concrete = 2%
+Ahuroa (6.60 km) Gravel = 97% Concrete = 3%
+Ahuroa - Waipu (6.60 km) Gravel = 97% Concrete = 3%
+Ruakaka - Maungaturoto (4.37 km)Gravel = 100%
+Maungaturoto (4.37 km) Gravel = 100%
+Waiwera (18.03 km) Gravel = 97% Tarmac = 2% Concrete = 1%
+Tahekeroa (18.02 km) Gravel = 97% Tarmac = 2% Concrete = 1%
+Noakes Hill (9.51km) Gravel = 98% Tarmac = 2%
+Orewa (9.51km) Gravel = 98% Tarmac = 2%
+Tahekeroa - Orewa (8.51km) Gravel = 99% Tarmac - 1%
+Makarau (8.51km) Gravel = 99% Tarmac - 1%
+
+Scandia (Fictional)
+Holtjønn (30.93 km) Snow = 99% Ice = 1%
+Hengeltjønn (31.84 km) Snow = 99% Ice = 1%
+Fyresvatn (17.10 km) Snow = 100%
+Russvatn (16.79 km) Snow = 100%
+Tovsli (13.75 km) Snow = 100%
+Kottjønn (6.62 km) Snow = 100%
+Fordol (5.43 km) Snow = 100%
+Fyresdal (5.43 km) Snow = 100%
+Ljosdalstjønn (9.37 km) Snow = 100%
+Dagtrolltjønn (9.27 km) Snow = 100%
+Tovslioytjorn (7.52 km) Snow = 100%
+Bergsøytjønn (7.29 km) Snow = 100%
+
+Iberia (Fictional)
+Santes Creus (18.98 km) Tarmac = 100%
+La Llacuna (18.98 km) Tarmac = 100%
+Seguer (9.74 km) Tarmac = 100%
+Esblada (9.74 km) Tarmac = 100%
+Montagut (9.24 km) Tarmac = 100%
+Aiguamúrcia (9.24 km) Tarmac = 100%
+Alforja (16.28 km) Tarmac = 100%
+Les Irles (16.28 km) Tarmac = 100%
+Duesaigües (8.94 km) Tarmac = 100%
+Les Voltes (8.94 km) Tarmac = 100%
+Montclar (7.33 km) Tarmac = 100%
+Botarell(7.33 km)Tarmac = 100%
