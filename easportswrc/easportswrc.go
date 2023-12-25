@@ -1,4 +1,4 @@
-package main
+package easportswrc
 
 import (
 	"encoding/binary"
@@ -141,9 +141,14 @@ type Location struct {
 	Stages []string
 }
 
-type Stage struct {
+type StageID struct {
 	Location int
 	Stage    int
+}
+
+type Stage struct {
+	Location string
+	Stage    string
 }
 
 var (
@@ -419,21 +424,48 @@ var (
 			"Botareli",
 		}},
 	}
-	Stages = map[float64]Stage{
+	Stages = map[float64]StageID{
 		32702.908203125:  {0, 0},
+		8306.2373046875:  {0, 9},
 		21768.318359375:  {1, 0},
 		21780.54296875:   {1, 1},
 		11371.871094:     {1, 2},
 		27065.39453125:   {2, 0},
 		6154.95751953125: {2, 10},
 		25884.58203125:   {3, 0},
+		7798.4951171875:  {3, 10},
+		8101.09228515625: {3, 8},
 		9099.501953125:   {3, 10},
 		30647.3671875:    {4, 0},
 		31854.994140625:  {5, 0},
-		7790.3369140625:  {5, 11},
+		7790.3369140625:  {5, 10},
+		7818.212890625:   {5, 11},
 		17430.73828125:   {7, 0},
 		11414.5859375:    {8, 0},
 		24990.927734375:  {9, 0},
+		7982.541015625:   {13, 5},
 		7023.32177734375: {15, 2},
 	}
 )
+
+func GetStage(sd float64) Stage {
+	s, ok := Stages[sd]
+	if ok {
+		loc := Location{Name: "unknown", Stages: nil}
+		if s.Location >= 0 && s.Location < len(Locations) {
+			loc = Locations[s.Location]
+		}
+		stage := "unknown"
+		if s.Stage >= 0 && s.Stage < len(loc.Stages) {
+			stage = loc.Stages[s.Stage]
+		}
+		return Stage{
+			Location: loc.Name,
+			Stage:    stage,
+		}
+	}
+	return Stage{
+		Location: "unknown",
+		Stage:    "unknown",
+	}
+}

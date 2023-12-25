@@ -1,3 +1,5 @@
 mark/ 
 *.exe 
 sample.go
+onnxruntime.dll 
+voicevox_core/ 

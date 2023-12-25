@@ -10,6 +10,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/nobonobo/wrc-logger/easportswrc"
 	"gocv.io/x/gocv"
 )
 
@@ -24,22 +25,29 @@ func main() {
 	img := gocv.NewMat()
 	logCloser := func() {}
 	camCloser := func() {}
+	closing := false
 	timeout := time.AfterFunc(3*time.Second, func() {
 		camCloser()
+		if closing {
+			logCloser()
+			closing = false
+		}
 		webcam = nil
 	})
 	timeout.Stop()
 	b := make([]byte, 4096)
 	compute := gocv.NewMat()
 	cnt := 0
+	lastTime := float32(0)
 	lastDetected := "unknown"
 	lastDistance := float64(0)
+	blockDistance := float64(0)
 	for {
 		n, _, err := conn.ReadFrom(b)
 		if err != nil {
 			log.Fatal(err)
 		}
-		if n != PacketEASportsWRCLength {
+		if n != easportswrc.PacketEASportsWRCLength {
 			continue
 		}
 		cnt++
@@ -58,20 +66,38 @@ func main() {
 			webcam = cam
 			timeout.Reset(3 * time.Second)
 		}
-		var packet PacketEASportsWRC
+		var packet easportswrc.PacketEASportsWRC
 		packet.UnmarshalBinary(b[:n])
 		timeout.Reset(3 * time.Second)
 		logName := filepath.Join("log", fmt.Sprintf("%v.log", packet.StageLength))
-		if logFile != nil && packet.StageCurrentDistance == 0 {
+		// 上書きを避けるために既存ファイルがある場合はファイル名にサフィックスを付与する
+		for i := 1; ; i++ {
+			_, err := os.Stat(logName)
+			if err != nil {
+				if os.IsNotExist(err) {
+					break
+				}
+			}
+			logName = filepath.Join("log", fmt.Sprintf("%v.log.%d", packet.StageLength, i))
+		}
+		// ステージの最初に戻ったらいったんファイルを閉じる
+		if logFile != nil && lastTime > 0 && packet.StageCurrentTime == 0 {
 			logCloser()
 		}
+		lastTime = packet.StageCurrentTime
 		if logFile == nil {
 			f, err := os.Create(logName)
 			if err != nil {
 				log.Fatal(err)
 			}
 			logFile = f
-			logCloser = sync.OnceFunc(func() { logFile.Close(); logFile = nil })
+			logCloser = sync.OnceFunc(func() {
+				logFile.Close()
+				logFile = nil
+				closing = false
+				log.Println(logName, "closed")
+			})
+			closing = false
 			log.Println(logName, "created")
 		}
 		if webcam != nil {
@@ -99,6 +125,7 @@ func main() {
 					}
 				}
 			}
+			// 判定不能だった場合、その画像を記録しておく
 			if detect == "unknown" {
 				//log.Println(packet.StageCurrentDistance, detect)
 				gocv.IMWrite(fmt.Sprintf("mark/%v_unknown.png", packet.StageCurrentDistance), save)
@@ -109,10 +136,11 @@ func main() {
 				save.Close()
 				continue
 			}
-			sameDetected := detect == lastDetected && packet.StageCurrentDistance < lastDistance+10
+			sameDetected := detect == lastDetected && packet.StageCurrentDistance < lastDistance+20
 			lastDetected = detect
 			lastDistance = packet.StageCurrentDistance
-			if sameDetected {
+			// 最後に検知したものとの20メートル以内の重複および、指示なし距離分の検出を無視する
+			if sameDetected || packet.StageCurrentDistance < blockDistance {
 				continue
 			}
 			distPreProcess(&dist)
@@ -127,6 +155,9 @@ func main() {
 						distDetected, _ = strconv.Atoi(k)
 					}
 				}
+			}
+			if distDetected > 0 {
+				blockDistance = packet.StageCurrentDistance + float64(distDetected)
 			}
 			iconPreProcess(&icon)
 			hash.Compute(icon, &compute)
@@ -152,8 +183,7 @@ func main() {
 				))
 			}
 			if packet.StageCurrentDistance >= packet.StageLength || detect == "finish" {
-				log.Println(logName, "closed")
-				logCloser()
+				closing = true
 			}
 			gocv.IMWrite(fmt.Sprintf("mark/%v_%s_%s_%d.png", packet.StageCurrentDistance, detect, iconDetected, distDetected), save)
 			gocv.IMWrite(fmt.Sprintf("mark/%v_th.png", packet.StageCurrentDistance), mark)
