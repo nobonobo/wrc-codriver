@@ -60,7 +60,7 @@ func main() {
 				log.Fatal(err)
 			}
 			camCloser = sync.OnceFunc(func() { cam.Close() })
-			cam.Set(gocv.VideoCaptureFPS, 30)
+			cam.Set(gocv.VideoCaptureFPS, 60)
 			cam.Set(gocv.VideoCaptureFrameWidth, 1920)
 			cam.Set(gocv.VideoCaptureFrameHeight, 1024)
 			webcam = cam
@@ -119,7 +119,7 @@ func main() {
 			detectMin := 10000.0
 			for k, v := range Marks {
 				similar := hash.Compare(compute, v)
-				if similar < 5 {
+				if similar < 10 {
 					if detectMin > similar {
 						detectMin = similar
 						detect = k
@@ -137,11 +137,11 @@ func main() {
 				save.Close()
 				continue
 			}
-			sameDetected := detect == lastDetected && packet.StageCurrentDistance < lastDistance+20
+			sameDetected := detect == lastDetected && packet.StageCurrentDistance < lastDistance+30
 			lastDetected = detect
 			lastDistance = packet.StageCurrentDistance
-			// 最後に検知したものとの20メートル以内の重複および、指示なし距離分の検出を無視する
-			if sameDetected || packet.StageCurrentDistance < blockDistance {
+			// 最後に検知したものとの30メートル以内の重複および、指示なし距離分の検出を無視する
+			if sameDetected || (packet.StageCurrentDistance < blockDistance && detect != "finish") {
 				continue
 			}
 			distPreProcess(&dist)
@@ -158,7 +158,7 @@ func main() {
 				}
 			}
 			if distDetected > 0 {
-				blockDistance = packet.StageCurrentDistance + float64(distDetected)
+				blockDistance = packet.StageCurrentDistance + 0.6*float64(distDetected)
 			}
 			iconPreProcess(&icon)
 			hash.Compute(icon, &compute)
@@ -166,7 +166,7 @@ func main() {
 			iconMin := 1000.0
 			for k, v := range Icons {
 				similar := hash.Compare(compute, v)
-				if similar < 10 {
+				if similar < 15 {
 					if iconMin > similar {
 						iconMin = similar
 						iconDetected = k

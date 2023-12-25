@@ -220,16 +220,16 @@ func sigmoidConversion(src gocv.Mat, dst *gocv.Mat, alpha float64) {
 var mask = gocv.NewMat()
 
 func markPreProcess(img *gocv.Mat) {
-	sigmoidConversion(*img, img, 7)
-	gocv.DetailEnhance(*img, img, 20, 0.1)
-	gocv.CvtColor(*img, img, gocv.ColorBGRToGray)
-	//gocv.GaussianBlur(*img, img, image.Point{X: 5, Y: 5}, 0, 0, gocv.BorderDefault)
-	gocv.Normalize(*img, img, 0, 255, gocv.NormMinMax)
-	gocv.AdaptiveThreshold(*img, img, 255, gocv.AdaptiveThresholdGaussian, gocv.ThresholdBinary, 13, 10)
 	if iconMask.Empty() {
 		mask = gocv.IMRead(filepath.Join("assets", "mask", "mask.png"), gocv.IMReadColor)
 		gocv.CvtColor(mask, &mask, gocv.ColorBGRToGray)
 	}
+	sigmoidConversion(*img, img, 7)
+	gocv.DetailEnhance(*img, img, 20, 0.1)
+	gocv.CvtColor(*img, img, gocv.ColorBGRToGray)
+	gocv.GaussianBlur(*img, img, image.Point{X: 5, Y: 5}, 0, 0, gocv.BorderDefault)
+	// gocv.Normalize(*img, img, 0, 255, gocv.NormMinMax)
+	gocv.AdaptiveThreshold(*img, img, 255, gocv.AdaptiveThresholdGaussian, gocv.ThresholdBinary, 13, 10)
 	gocv.Add(*img, mask, img)
 	gocv.Rectangle(img, iconRect, color.RGBA{255, 255, 255, 0}, -1)
 	gocv.Rectangle(img, distRect, color.RGBA{255, 255, 255, 0}, -1)
@@ -255,12 +255,12 @@ var iconMask = gocv.NewMat()
 func iconPreProcess(img *gocv.Mat) {
 	sigmoidConversion(*img, img, 5)
 	gocv.DetailEnhance(*img, img, 20, 0.1)
-	gocv.CvtColor(*img, img, gocv.ColorBGRToGray)
+	//gocv.CvtColor(*img, img, gocv.ColorBGRToGray)
 	//gocv.Normalize(*img, img, 0, 255, gocv.NormMinMax)
-	gocv.AdaptiveThreshold(*img, img, 255, gocv.AdaptiveThresholdGaussian, gocv.ThresholdBinary, 9, 15)
+	//gocv.AdaptiveThreshold(*img, img, 255, gocv.AdaptiveThresholdGaussian, gocv.ThresholdBinary, 9, 15)
 	if iconMask.Empty() {
 		iconMask = gocv.IMRead(filepath.Join("assets", "mask", "icon-mask.png"), gocv.IMReadColor)
-		gocv.CvtColor(iconMask, &iconMask, gocv.ColorBGRToGray)
+		//gocv.CvtColor(iconMask, &iconMask, gocv.ColorBGRToGray)
 	}
 	gocv.Add(*img, iconMask, img)
 }

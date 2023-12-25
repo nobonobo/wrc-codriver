@@ -29,12 +29,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.914906"
-     inkscape:cx="161.76525"
-     inkscape:cy="409.33167"
+     inkscape:cx="20.220657"
+     inkscape:cy="411.51769"
      inkscape:window-width="1651"
      inkscape:window-height="1243"
      inkscape:window-x="2535"
-     inkscape:window-y="99"
+     inkscape:window-y="90"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -52,7 +52,7 @@
          id="stop898" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0.89911312"
+         offset="0.87988234"
          id="stop970" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -72,7 +72,7 @@
          id="stop896" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0.89689583"
+         offset="0.83439589"
          id="stop962" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -92,7 +92,7 @@
          id="stop894" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0.94789362"
+         offset="0.91664362"
          id="stop946" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -112,7 +112,7 @@
          id="stop900" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0.89911312"
+         offset="0.83180541"
          id="stop930" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -165,6 +165,14 @@
      id="layer1"
      transform="translate(-63.043808,-41.065239)">
     <rect
+       style="mix-blend-mode:lighten;fill:url(#linearGradient942);fill-opacity:1;stroke-width:0.264583"
+       id="rect940"
+       width="38.099998"
+       height="38.099998"
+       x="-79.165237"
+       y="63.043808"
+       transform="rotate(-90)" />
+    <rect
        style="mix-blend-mode:lighten;fill:url(#linearGradient928);fill-opacity:1;stroke-width:0.264583"
        id="rect184"
        width="38.099998"
@@ -187,13 +195,5 @@
        x="-101.14381"
        y="-79.165237"
        transform="scale(-1)" />
-    <rect
-       style="mix-blend-mode:lighten;fill:url(#linearGradient942);fill-opacity:1;stroke-width:0.264583"
-       id="rect940"
-       width="38.099998"
-       height="38.099998"
-       x="-79.165237"
-       y="63.043808"
-       transform="rotate(-90)" />
   </g>
 </svg>
