@@ -3,4 +3,4 @@ mark/
 sample.go
 onnxruntime.dll 
 voicevox_core/ 
-assets/sign/*_th.png
+assets/**/*_th.png
