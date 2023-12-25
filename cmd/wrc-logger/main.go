@@ -97,6 +97,7 @@ func main() {
 				closing = false
 				log.Println(logName, "closed")
 			})
+			blockDistance = 0
 			closing = false
 			log.Println(logName, "created")
 		}
