@@ -194,15 +194,16 @@ func getMotionStop(mark gocv.Mat) bool {
 	return stop
 }
 
-var sigmoid_cvt = gocv.NewMat()
+var sigmoid_cvt = map[float64]gocv.Mat{}
 
 func sigmoid(x, alpha float64) float64 {
 	return 1 / (1 + math.Exp(-alpha*x))
 }
 
 func sigmoidConversion(src gocv.Mat, dst *gocv.Mat, alpha float64) {
-	if sigmoid_cvt.Empty() {
-		sigmoid_cvt = gocv.NewMatWithSize(256, 1, gocv.MatTypeCV8U)
+	cvt, ok := sigmoid_cvt[alpha]
+	if !ok {
+		cvt = gocv.NewMatWithSize(256, 1, gocv.MatTypeCV8U)
 		for r := 0; r < 256; r++ {
 			v := 255.0 * sigmoid(5*float64(r-127)/127, alpha)
 			if v > 255 {
@@ -211,10 +212,11 @@ func sigmoidConversion(src gocv.Mat, dst *gocv.Mat, alpha float64) {
 			if v < 0 {
 				v = 0
 			}
-			sigmoid_cvt.SetUCharAt(r, 0, uint8(v))
+			cvt.SetUCharAt(r, 0, uint8(v))
 		}
+		sigmoid_cvt[alpha] = cvt
 	}
-	gocv.LUT(src, sigmoid_cvt, dst)
+	gocv.LUT(src, cvt, dst)
 }
 
 var mask = gocv.NewMat()

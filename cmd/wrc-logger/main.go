@@ -37,7 +37,6 @@ func main() {
 	timeout.Stop()
 	b := make([]byte, 4096)
 	compute := gocv.NewMat()
-	cnt := 0
 	lastTime := float32(0)
 	lastDetected := "unknown"
 	lastDistance := float64(0)
@@ -48,10 +47,6 @@ func main() {
 			log.Fatal(err)
 		}
 		if n != easportswrc.PacketEASportsWRCLength {
-			continue
-		}
-		cnt++
-		if cnt%2 == 0 {
 			continue
 		}
 		if webcam == nil {
