@@ -116,10 +116,10 @@ func main() {
 			markPreProcess(&mark)
 			hash.Compute(mark, &compute)
 			detect := "unknown"
-			detectMin := 100.0
+			detectMin := 10000.0
 			for k, v := range Marks {
 				similar := hash.Compare(compute, v)
-				if similar < 10 {
+				if similar < 5 {
 					if detectMin > similar {
 						detectMin = similar
 						detect = k
@@ -128,7 +128,7 @@ func main() {
 			}
 			// 判定不能だった場合、その画像を記録しておく
 			if detect == "unknown" {
-				//log.Println(packet.StageCurrentDistance, detect)
+				log.Println(packet.StageCurrentDistance, detect)
 				gocv.IMWrite(fmt.Sprintf("mark/%v_unknown.png", packet.StageCurrentDistance), save)
 				gocv.IMWrite(fmt.Sprintf("mark/%v_th.png", packet.StageCurrentDistance), mark)
 				icon.Close()
@@ -147,7 +147,7 @@ func main() {
 			distPreProcess(&dist)
 			hash.Compute(dist, &compute)
 			distDetected := 0
-			distMin := 100.0
+			distMin := 1000.0
 			for k, v := range Dists {
 				similar := hash.Compare(compute, v)
 				if similar < 15 {
@@ -163,10 +163,10 @@ func main() {
 			iconPreProcess(&icon)
 			hash.Compute(icon, &compute)
 			iconDetected := "unknown"
-			iconMin := 100.0
+			iconMin := 1000.0
 			for k, v := range Icons {
 				similar := hash.Compare(compute, v)
-				if similar < 15 {
+				if similar < 10 {
 					if iconMin > similar {
 						iconMin = similar
 						iconDetected = k

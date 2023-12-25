@@ -184,7 +184,7 @@ func getMotionStop(mark gocv.Mat) bool {
 			cntStop--
 		}
 	} else {
-		if cntStop < 5 {
+		if cntStop < 3 {
 			cntStop++
 		}
 		if cntStop == 2 {
@@ -220,12 +220,12 @@ func sigmoidConversion(src gocv.Mat, dst *gocv.Mat, alpha float64) {
 var mask = gocv.NewMat()
 
 func markPreProcess(img *gocv.Mat) {
-	sigmoidConversion(*img, img, 5)
-	//gocv.DetailEnhance(*img, img, 20, 0.1)
+	sigmoidConversion(*img, img, 7)
+	gocv.DetailEnhance(*img, img, 20, 0.1)
 	gocv.CvtColor(*img, img, gocv.ColorBGRToGray)
 	//gocv.GaussianBlur(*img, img, image.Point{X: 5, Y: 5}, 0, 0, gocv.BorderDefault)
 	gocv.Normalize(*img, img, 0, 255, gocv.NormMinMax)
-	gocv.AdaptiveThreshold(*img, img, 255, gocv.AdaptiveThresholdGaussian, gocv.ThresholdBinary, 11, 10)
+	gocv.AdaptiveThreshold(*img, img, 255, gocv.AdaptiveThresholdGaussian, gocv.ThresholdBinary, 13, 10)
 	if iconMask.Empty() {
 		mask = gocv.IMRead(filepath.Join("assets", "mask", "mask.png"), gocv.IMReadColor)
 		gocv.CvtColor(mask, &mask, gocv.ColorBGRToGray)
