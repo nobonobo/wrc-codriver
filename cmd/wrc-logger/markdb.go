@@ -160,6 +160,7 @@ var (
 
 func getMotion(mark gocv.Mat) int32 {
 	inner := mark.Region(innerRect)
+	sigmoidConversion(inner, &inner, 5)
 	gocv.DetailEnhance(inner, &inner, 20, 0.5)
 	gocv.CvtColor(inner, &inner, gocv.ColorBGRToGray)
 	gocv.GaussianBlur(inner, &inner, image.Point{X: 5, Y: 5}, 0, 0, gocv.BorderDefault)
@@ -179,7 +180,7 @@ func getMotion(mark gocv.Mat) int32 {
 func getMotionStop(mark gocv.Mat) bool {
 	stop := false
 	m := getMotion(mark)
-	if m > 100 {
+	if m > 1000 {
 		if cntStop > 0 {
 			cntStop--
 		}
