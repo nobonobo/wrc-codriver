@@ -123,7 +123,6 @@ func main() {
 			}
 			// 判定不能だった場合、その画像を記録しておく
 			if detect == "unknown" {
-				log.Println(packet.StageCurrentDistance, detect)
 				gocv.IMWrite(fmt.Sprintf("mark/%v_unknown.png", packet.StageCurrentDistance), save)
 				gocv.IMWrite(fmt.Sprintf("mark/%v_th.png", packet.StageCurrentDistance), mark)
 				icon.Close()

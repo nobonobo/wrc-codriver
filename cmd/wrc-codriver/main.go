@@ -116,15 +116,15 @@ func main() {
 	if err := s.LoadModelsFromStyleId(nanoda.StyleId(ActorID)); err != nil {
 		log.Fatal(err)
 	}
-	qMarks, err := Setup(s, marks)
+	qMarks, err := Setup(s, Dict.Marks)
 	if err != nil {
 		log.Fatal(err)
 	}
-	qIcons, err := Setup(s, icons)
+	qIcons, err := Setup(s, Dict.Icons)
 	if err != nil {
 		log.Fatal(err)
 	}
-	qDists, err := Setup(s, dists)
+	qDists, err := Setup(s, Dict.Dists)
 	if err != nil {
 		log.Fatal(err)
 	}
