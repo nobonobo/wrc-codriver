@@ -41,6 +41,7 @@ func main() {
 	lastDetected := "unknown"
 	lastDistance := float64(0)
 	blockDistance := float64(0)
+	cnt := 0
 	for {
 		n, _, err := conn.ReadFrom(b)
 		if err != nil {
@@ -101,9 +102,13 @@ func main() {
 			if img.Empty() {
 				continue
 			}
+			cnt++
+			if cnt%2 == 0 {
+				continue
+			}
 			mark := img.Region(markRect)
 			save := mark.Clone()
-			if !getMotionStop(mark) {
+			if !getMotionStop(mark.Clone()) {
 				continue
 			}
 			icon := mark.Region(iconRect)
@@ -120,6 +125,10 @@ func main() {
 						detect = k
 					}
 				}
+			}
+			// 終盤じゃないfinishは誤判定
+			if detect == "finish" && packet.StageLength-500 > packet.StageCurrentDistance {
+				detect = "unknown"
 			}
 			// 判定不能だった場合、その画像を記録しておく
 			if detect == "unknown" {
@@ -152,7 +161,7 @@ func main() {
 				}
 			}
 			if distDetected > 0 {
-				blockDistance = packet.StageCurrentDistance + 0.6*float64(distDetected)
+				blockDistance = packet.StageCurrentDistance + 0.8*float64(distDetected)
 			}
 			iconPreProcess(&icon)
 			hash.Compute(icon, &compute)

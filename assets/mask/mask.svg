@@ -29,8 +29,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.914906"
-     inkscape:cx="-50.824893"
-     inkscape:cy="412.61069"
+     inkscape:cx="-211.49714"
+     inkscape:cy="414.79671"
      inkscape:window-width="1651"
      inkscape:window-height="1243"
      inkscape:window-x="2535"
@@ -52,7 +52,7 @@
          id="stop898" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0.82940155"
+         offset="0.80000001"
          id="stop970" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -72,7 +72,7 @@
          id="stop896" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0.82999998"
+         offset="0.85000002"
          id="stop962" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -92,7 +92,7 @@
          id="stop894" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0.82999998"
+         offset="0.88"
          id="stop946" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -112,7 +112,7 @@
          id="stop900" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0.82999998"
+         offset="0.85000002"
          id="stop930" />
       <stop
          style="stop-color:#ffffff;stop-opacity:1;"
@@ -165,13 +165,6 @@
      id="layer1"
      transform="translate(-63.043808,-41.065239)">
     <rect
-       style="mix-blend-mode:lighten;fill:url(#linearGradient928);fill-opacity:1;stroke-width:0.264583"
-       id="rect184"
-       width="38.099998"
-       height="38.099998"
-       x="63.043816"
-       y="41.065239" />
-    <rect
        style="mix-blend-mode:lighten;fill:url(#linearGradient934);fill-opacity:1;stroke-width:0.264583"
        id="rect932"
        width="38.099998"
@@ -195,5 +188,12 @@
        x="-79.165237"
        y="63.043808"
        transform="rotate(-90)" />
+    <rect
+       style="mix-blend-mode:lighten;fill:url(#linearGradient928);fill-opacity:1;stroke-width:0.264583"
+       id="rect184"
+       width="38.099998"
+       height="38.099998"
+       x="63.043816"
+       y="41.065239" />
   </g>
 </svg>
