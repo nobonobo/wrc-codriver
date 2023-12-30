@@ -170,6 +170,9 @@ func main() {
 		if scanner == nil {
 			continue
 		}
+		if packet.StageCurrentDistance < 1 {
+			continue
+		}
 		info, err := nextInfo(scanner, packet.StageCurrentDistance+Offset)
 		if err != nil {
 			log.Println(err)

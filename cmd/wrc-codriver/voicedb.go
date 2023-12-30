@@ -14,7 +14,7 @@ var (
 	ActorID = 3
 	Speed   = 1.5
 	Pitch   = 0.0
-	Offset  = 0.0
+	Offset  = 15.0
 	Volume  = 1.5
 )
 
@@ -23,7 +23,7 @@ func init() {
 	flag.Float64Var(&Speed, "speed", Speed, "speed")
 	flag.Float64Var(&Pitch, "pitch", Pitch, "pitch")
 	flag.Float64Var(&Volume, "volume", Volume, "volume")
-	flag.Float64Var(&Offset, "offset", Offset, "offset")
+	flag.Float64Var(&Offset, "offset", Offset, "offset(-50..50)")
 	flag.Parse()
 }
 
