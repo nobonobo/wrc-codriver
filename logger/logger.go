@@ -2,6 +2,7 @@ package logger
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -13,6 +14,12 @@ import (
 	"github.com/nobonobo/wrc-logger/easportswrc"
 	"gocv.io/x/gocv"
 )
+
+var CameraDeviceID = 2
+
+func init() {
+	flag.IntVar(&CameraDeviceID, "camera", CameraDeviceID, "camera device id")
+}
 
 func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 	var logFile *os.File
@@ -38,7 +45,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 	cnt := 0
 	return func(packet *easportswrc.PacketEASportsWRC) error {
 		if webcam == nil {
-			cam, err := gocv.VideoCaptureDevice(2)
+			cam, err := gocv.VideoCaptureDevice(CameraDeviceID)
 			if err != nil {
 				log.Fatal(err)
 			}
