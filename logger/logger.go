@@ -153,7 +153,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 				}
 			}
 			if distDetected > 0 {
-				blockDistance = packet.StageCurrentDistance + 0.8*float64(distDetected)
+				blockDistance = packet.StageCurrentDistance + 0.5*float64(distDetected)
 			}
 			iconPreProcess(&icon)
 			hash.Compute(icon, &compute)
