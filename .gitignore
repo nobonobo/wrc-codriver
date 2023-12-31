@@ -5,3 +5,5 @@ onnxruntime.dll
 voicevox_core/ 
 assets/**/*_th.png
 sample2.go
+dist/ 
+wrc-logger-*.zip 
