@@ -158,6 +158,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			f, err := os.Open(logName)
 			if err != nil {
 				completed = logName // 読み込み済み
+				lastTime = 1
 				log.Println(logName, "not found")
 				return err
 			}

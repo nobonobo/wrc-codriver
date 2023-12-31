@@ -15,7 +15,7 @@ build:
 run: build
 	./wrc-logger.exe
 
-pack:
+pack: build
 	pack.bat wrc-logger-$(VERSION).zip
 	#powershell Compress-Archive -Path dist -Force -DestinationPath wrc-logger-$(VERSION).zip
 
