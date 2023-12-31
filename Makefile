@@ -21,3 +21,6 @@ pack:
 
 version:
 	@echo $(VERSION) | cat
+
+sync:
+	robocopy dist\log log /E /XO

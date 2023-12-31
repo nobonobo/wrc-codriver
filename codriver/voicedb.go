@@ -12,7 +12,7 @@ import (
 
 var (
 	ActorID = 3
-	Speed   = 1.3
+	Speed   = 1.5
 	Pitch   = 0.0
 	Offset  = 5.0
 	Volume  = 1.8
