@@ -1,5 +1,6 @@
 set OPENCV_RUNTIME=C:\opencv\build\install\x64\mingw\bin
 mkdir dist
+del /S dist\mark
 XCOPY /E /Y voicevox_core dist\voicevox_core\
 XCOPY /E /Y assets dist\assets\
 XCOPY /E /Y log dist\log\

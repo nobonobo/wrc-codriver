@@ -306,17 +306,17 @@ var (
 		// 10
 		{"BIO BIO Rally Chile", []string{
 			"Bio Bío",
-			"Arauco",
-			"Coronel",
-			"Lota",
-			"Santa Juana",
-			"Los Angeles",
-			"San Rosendo",
+			"Pulpería",
+			"Río Lía",
+			"María Las Cruces",
+			"Las Paraguas",
+			"Rere",
+			"El Poñen",
 			"Laja",
 			"Yumbel",
-			"Florida",
+			"Río Claro",
 			"Hualqui",
-			"Reputo",
+			"Chivilingo",
 		}},
 		// 11
 		{"Central Europe Rally", []string{
@@ -462,6 +462,7 @@ var (
 		24990.927734375:  {9, 0},
 		5884.07763671875: {9, 9}, // old
 		// 10:Chile
+		18300.140625:     {10, 2}, // new
 		8075.86572265625: {10, 8}, // old
 		// 11:Central Europe
 		32679.244140625: {11, 1},  // old

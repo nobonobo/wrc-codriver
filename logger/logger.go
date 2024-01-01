@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"strings"
 	"sync"
 	"time"
 
@@ -133,6 +134,10 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 				return nil
 			}
 			sameDetected := detect == lastDetected && packet.StageCurrentDistance < lastDistance+30
+			// シケインは100m以内の重複を除外
+			if strings.HasSuffix(lastDetected, "chicane") {
+				sameDetected = sameDetected || (detect == lastDetected && packet.StageCurrentDistance < lastDistance+100)
+			}
 			lastDetected = detect
 			lastDistance = packet.StageCurrentDistance
 			// 最後に検知したものとの30メートル以内の重複および、指示なし距離分の検出を無視する
@@ -153,7 +158,11 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 				}
 			}
 			if distDetected > 0 {
-				blockDistance = packet.StageCurrentDistance + 0.5*float64(distDetected)
+				// 直線の宣言距離x0.8m分検出ブロック、50m差し引いてマイナスなものはブロックしない
+				blockDistance = packet.StageCurrentDistance + 0.8*float64(distDetected) - 50
+				if blockDistance < packet.StageCurrentDistance {
+					blockDistance = packet.StageCurrentDistance
+				}
 			}
 			iconPreProcess(&icon)
 			hash.Compute(icon, &compute)
