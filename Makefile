@@ -23,4 +23,4 @@ version:
 	@echo $(VERSION) | cat
 
 sync:
-	robocopy dist\log log /E /XO
+	cmd /c \(robocopy dist\log log /E /XO\) \^\& IF %ERRORLEVEL% LEQ 1 exit 0
