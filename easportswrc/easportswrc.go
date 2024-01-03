@@ -433,11 +433,11 @@ var (
 		12357.8984375:   {0, 4},  // new: La Maïris
 		6680.1611328125: {0, 5},  // new: Baisse de Patronel
 		17064.154296875: {0, 6},  // new: Saint-Léger-les-Mélèzes - La Bâtie-Neuve
-		1357.8984375:    {0, 7},  // none: La Bâtie-Neuve - Saint-Léger-les-Mélèzes
-		2357.8984375:    {0, 8},  // none: Moissière
+		16908.458984375: {0, 7},  // new: La Bâtie-Neuve - Saint-Léger-les-Mélèzes
+		8478.833984375:  {0, 8},  // new: Moissière
 		8306.2373046875: {0, 9},  // old: Ancelle
-		357.8984375:     {0, 10}, // none: Ravin de Coste Belle
-		37.8984375:      {0, 11}, // none: Les Borels
+		8924.6201171875: {0, 10}, // new: Ravin de Coste Belle
+		8922.3984375:    {0, 11}, // new: Les Borels
 
 		// 1:Sweden
 		21768.318359375:   {1, 0}, // none: Hof-Finnskog
