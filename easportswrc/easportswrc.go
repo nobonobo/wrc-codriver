@@ -426,9 +426,19 @@ var (
 	}
 	Stages = map[float64]StageID{
 		// 0:Monte-Carlo
-		18799.8984375:   {0, 0}, // old: La Bollène-Vésubie - Peïra Cava
-		18606.03125:     {0, 1}, // new: Peïra Cava - La Bollène-Vésubie
-		8306.2373046875: {0, 9}, // old
+		18799.8984375:   {0, 0},  // old: La Bollène-Vésubie - Peïra Cava
+		18606.03125:     {0, 1},  // new: Peïra Cava - La Bollène-Vésubie
+		12349.2734375:   {0, 2},  // new: La Bollène-Vésubie - Col de Turini
+		12358.8984375:   {0, 3},  // new: Pra d'Alart
+		12357.8984375:   {0, 4},  // new: La Maïris
+		6680.1611328125: {0, 5},  // new: Baisse de Patronel
+		17064.154296875: {0, 6},  // new: Saint-Léger-les-Mélèzes - La Bâtie-Neuve
+		1357.8984375:    {0, 7},  // none: La Bâtie-Neuve - Saint-Léger-les-Mélèzes
+		2357.8984375:    {0, 8},  // none: Moissière
+		8306.2373046875: {0, 9},  // old: Ancelle
+		357.8984375:     {0, 10}, // none: Ravin de Coste Belle
+		37.8984375:      {0, 11}, // none: Les Borels
+
 		// 1:Sweden
 		21768.318359375:   {1, 0}, // none: Hof-Finnskog
 		21780.54296875:    {1, 1}, // none: Åsnes
