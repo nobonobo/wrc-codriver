@@ -98,7 +98,7 @@ func init() {
 		"dont-cut",
 		"cut",
 		"caution",
-		"terrible-caution",
+		"double-caution",
 		"narrow",
 		"widen",
 		//"twisty",

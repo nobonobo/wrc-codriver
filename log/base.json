@@ -36,7 +36,7 @@
     "dont-cut": { "text": "ドントカット" },
     "cut": { "text": "カット" },
     "caution": { "text": "注意" },
-    "terrible-caution": { "text": "警戒" },
+    "double-caution": { "text": "警戒" },
     "narrow": { "text": "ナロー" },
     "widen": { "text": "ワイド" },
     "tighten": { "text": "タイト" },
