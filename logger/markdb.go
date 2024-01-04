@@ -5,6 +5,7 @@ import (
 	"image/color"
 	"log"
 	"math"
+	"os"
 	"path/filepath"
 
 	"gocv.io/x/gocv"
@@ -104,8 +105,12 @@ func init() {
 		//"twisty",
 	}
 	for _, n := range names {
+		fpath := filepath.Join("assets", "sign", n+".png")
+		if _, err := os.Stat(fpath); os.IsNotExist(err) {
+			continue
+		}
 		//log.Print("load:", n)
-		img := gocv.IMRead(filepath.Join("assets", "sign", n+".png"), gocv.IMReadColor)
+		img := gocv.IMRead(fpath, gocv.IMReadColor)
 		markPreProcess(&img)
 		gocv.IMWrite(filepath.Join("assets", "sign", n+"_th.png"), img)
 		compute := gocv.NewMat()
@@ -120,8 +125,12 @@ func init() {
 		}
 	}
 	for _, n := range nums {
+		fpath := filepath.Join("assets", "distance", n+".png")
+		if _, err := os.Stat(fpath); os.IsNotExist(err) {
+			continue
+		}
 		//log.Print("load:", n)
-		img := gocv.IMRead(filepath.Join("assets", "distance", n+".png"), gocv.IMReadColor)
+		img := gocv.IMRead(fpath, gocv.IMReadColor)
 		dist := img.Region(distRect)
 		distPreProcess(&dist)
 		gocv.IMWrite(filepath.Join("assets", "distance", n+"_th.png"), dist)
@@ -134,8 +143,12 @@ func init() {
 		Dists[n] = compute
 	}
 	for _, n := range icons {
+		fpath := filepath.Join("assets", "icon", n+".png")
+		if _, err := os.Stat(fpath); os.IsNotExist(err) {
+			continue
+		}
 		//log.Print("load:", n)
-		img := gocv.IMRead(filepath.Join("assets", "icon", n+".png"), gocv.IMReadColor)
+		img := gocv.IMRead(fpath, gocv.IMReadColor)
 		sub := img.Region(iconRect)
 		iconPreProcess(&sub)
 		gocv.IMWrite(filepath.Join("assets", "icon", n+"_th.png"), sub)
