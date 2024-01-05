@@ -48,7 +48,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 		if webcam == nil {
 			cam, err := gocv.VideoCaptureDevice(CameraDeviceID)
 			if err != nil {
-				log.Fatal(err)
+				log.Fatal("[log]", err)
 			}
 			camCloser = sync.OnceFunc(func() { cam.Close() })
 			cam.Set(gocv.VideoCaptureFPS, 60)
@@ -84,11 +84,11 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 				logFile.Close()
 				logFile = nil
 				closing = false
-				log.Println(logName, "closed")
+				log.Println("[log]", logName, "closed")
 			})
 			blockDistance = 0
 			closing = false
-			log.Println(logName, "created")
+			log.Println("[log]", logName, "created")
 		}
 		if webcam != nil {
 			webcam.Read(&img)
@@ -133,15 +133,23 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 				save.Close()
 				return nil
 			}
+			// 最後に検知したものとの30メートル以内の重複検出
 			sameDetected := detect == lastDetected && packet.StageCurrentDistance < lastDistance+30
 			// シケインは100m以内の重複を除外
 			if strings.HasSuffix(lastDetected, "chicane") {
 				sameDetected = sameDetected || (detect == lastDetected && packet.StageCurrentDistance < lastDistance+100)
 			}
+			// finishの重複分は無視
+			if lastDetected == "finish" && detect == "finish" {
+				return nil
+			}
 			lastDetected = detect
 			lastDistance = packet.StageCurrentDistance
-			// 最後に検知したものとの30メートル以内の重複および、指示なし距離分の検出を無視する
-			if sameDetected || (packet.StageCurrentDistance < blockDistance && detect != "finish") {
+			// 最後に検知したものとの30メートル以内の重複および
+			// straightとfinish以外のブロック（指示なし）距離の検出を無視する
+			normalSign := !(detect == "finish" || detect == "straight")
+			blocking := normalSign && packet.StageCurrentDistance < blockDistance
+			if sameDetected || blocking {
 				return nil
 			}
 			distPreProcess(&dist)
@@ -177,7 +185,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 					}
 				}
 			}
-			log.Printf("%v/%v:%s,%s,%d",
+			log.Printf("[log] %v/%v:%s,%s,%d",
 				packet.StageCurrentDistance, packet.StageLength,
 				detect, iconDetected, distDetected,
 			)

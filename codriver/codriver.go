@@ -50,9 +50,10 @@ var (
 )
 
 func nextInfo(scanner *bufio.Scanner, d float64) (*Info, error) {
+	empty := new(Info)
 	if prevInfo != nil {
 		if prevDist >= d {
-			return nil, nil
+			return empty, nil
 		}
 		res := prevInfo
 		prevInfo = nil
@@ -61,15 +62,12 @@ func nextInfo(scanner *bufio.Scanner, d float64) (*Info, error) {
 	}
 	if !scanner.Scan() {
 		if err := scanner.Err(); err != nil {
-			if err == io.EOF {
-				return nil, nil
-			}
 			return nil, err
 		}
 		return nil, nil
 	}
 	line := scanner.Text()
-	log.Println(d, "line", line)
+	log.Println("[snd]", d, "line", line)
 	fields := strings.Split(line, ",")
 	if len(fields) != 4 {
 		return nil, fmt.Errorf("invalid line: %s", line)
@@ -85,15 +83,15 @@ func nextInfo(scanner *bufio.Scanner, d float64) (*Info, error) {
 		Dist:     fields[3],
 	}
 	if next+100 < d {
-		log.Println("skip", res)
-		return nil, nil
+		log.Println("[snd]", "skip", res)
+		return empty, nil
 	}
 	if next < d {
 		return res, nil
 	}
 	prevInfo = res
 	prevDist = next
-	return nil, nil
+	return empty, nil
 }
 
 func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
@@ -154,7 +152,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 				logCloser()
 			}
 			completed = "" // リスタートしたら読み込み済み解除
-			log.Println(logName, "restart")
+			log.Println("[snd]", logName, "restart")
 			lastTime = packet.StageCurrentTime
 		}
 		if logFile == nil && completed != logName {
@@ -162,7 +160,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			if err != nil {
 				completed = logName // 読み込み済み
 				lastTime = 1
-				log.Println(logName, "not found")
+				log.Println("[snd]", logName, "not found")
 				return err
 			}
 			logFile = f
@@ -174,7 +172,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 				prevInfo = nil
 			})
 			scanner = bufio.NewScanner(logFile)
-			log.Println(logName, "opend", easportswrc.GetStage(packet.StageLength))
+			log.Println("[snd]", logName, "opend", easportswrc.GetStage(packet.StageLength))
 		}
 		if scanner == nil {
 			return nil
@@ -185,10 +183,10 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 		lastTime = packet.StageCurrentTime
 		info, err := nextInfo(scanner, packet.StageCurrentDistance+float64(packet.VehicleSpeed)+Offset)
 		if err != nil {
-			log.Println(err)
+			log.Println("[snd]", err)
 			logCloser()
 			completed = logName // 読み込み済み
-			log.Println(logName, "completed")
+			log.Println("[snd]", logName, "completed")
 			return nil
 		}
 		if info == nil {
@@ -196,8 +194,12 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			scanner = bufio.NewScanner(logFile)
 			return nil
 		}
+		if info.Position == 0 {
+			// 次の情報まで未到達
+			return nil
+		}
 		words := []nanoda.AudioQuery{}
-		log.Println(packet.StageCurrentDistance, info)
+		//log.Println("[snd]", packet.StageCurrentDistance, info)
 		qm, ok := qMarks[info.Mark]
 		if ok {
 			words = append(words, qm)
@@ -205,7 +207,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			if info.Mark != "unknown" {
 				q, err := makeAudioQuery(s, info.Mark)
 				if err != nil {
-					log.Println(err)
+					log.Println("[snd]", err)
 				} else {
 					words = append(words, q)
 				}
@@ -218,7 +220,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			if info.Icon != "unknown" {
 				q, err := makeAudioQuery(s, info.Icon)
 				if err != nil {
-					log.Println(err)
+					log.Println("[snd]", err)
 				} else {
 					words = append(words, q)
 				}
@@ -231,7 +233,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			if info.Dist != "0" {
 				q, err := makeAudioQuery(s, info.Dist)
 				if err != nil {
-					log.Println(err)
+					log.Println("[snd]", err)
 				} else {
 					words = append(words, q)
 				}
@@ -240,7 +242,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 		if info.Mark == "finish" {
 			logCloser()
 			completed = logName // 読み込み済み
-			log.Println(logName, "completed")
+			log.Println("[snd]", logName, "completed")
 		}
 		for _, w := range words {
 			speechCh <- w
