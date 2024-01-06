@@ -44,7 +44,8 @@
     "gravel": { "text": "グラベル" },
     "cobbles": { "text": "石畳" },
     "up-hill": { "text": "昇り" },
-    "down-hill": { "text": "下り" }
+    "down-hill": { "text": "下り" },
+    "narrow": { "text": "狭くなる" }
   },
   "icons": {
     "bridge": { "text": "ブリッジ" },
