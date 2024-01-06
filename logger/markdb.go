@@ -65,6 +65,8 @@ func init() {
 		"right-entry-chicane",
 		"straight",
 		"finish",
+		"kinks",
+		"narrow",
 	}
 	nums := []string{
 		"30",
@@ -107,10 +109,15 @@ func init() {
 	for _, n := range names {
 		fpath := filepath.Join("assets", "sign", n+".png")
 		if _, err := os.Stat(fpath); os.IsNotExist(err) {
+			log.Println("not found:", n)
 			continue
 		}
 		//log.Print("load:", n)
 		img := gocv.IMRead(fpath, gocv.IMReadColor)
+		if img.Empty() {
+			log.Println("invalid image:", n)
+			continue
+		}
 		markPreProcess(&img)
 		gocv.IMWrite(filepath.Join("assets", "sign", n+"_th.png"), img)
 		compute := gocv.NewMat()
