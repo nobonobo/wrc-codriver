@@ -100,12 +100,18 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 				return nil
 			}
 			mark := img.Region(markRect)
+			defer mark.Close()
 			save := mark.Clone()
-			if !getMotionStop(mark.Clone()) {
+			defer save.Close()
+			clone := mark.Clone()
+			defer clone.Close()
+			if !getMotionStop(clone) {
 				return nil
 			}
 			icon := mark.Region(iconRect)
+			defer icon.Close()
 			dist := mark.Region(distRect)
+			defer dist.Close()
 			markPreProcess(&mark)
 			hash.Compute(mark, &compute)
 			detect := "unknown"
@@ -127,10 +133,6 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			if detect == "unknown" {
 				gocv.IMWrite(fmt.Sprintf("mark/%v_unknown.png", packet.StageCurrentDistance), save)
 				gocv.IMWrite(fmt.Sprintf("mark/%v_th.png", packet.StageCurrentDistance), mark)
-				icon.Close()
-				dist.Close()
-				mark.Close()
-				save.Close()
 				return nil
 			}
 			// 最後に検知したものとの30メートル以内の重複検出
@@ -200,10 +202,6 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			}
 			gocv.IMWrite(fmt.Sprintf("mark/%v_%s_%s_%d.png", packet.StageCurrentDistance, detect, iconDetected, distDetected), save)
 			gocv.IMWrite(fmt.Sprintf("mark/%v_th.png", packet.StageCurrentDistance), mark)
-			icon.Close()
-			dist.Close()
-			mark.Close()
-			save.Close()
 		}
 		return nil
 	}
