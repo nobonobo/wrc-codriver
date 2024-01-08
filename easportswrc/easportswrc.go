@@ -440,14 +440,14 @@ var (
 		8922.3984375:     {0, 11}, // new: Les Borels
 
 		// 1:Sweden ---------------------------------------------------------------
-		21768.318359375: {1, 0}, // none: Hof-Finnskog
-		21780.54296875:  {1, 1}, // none: Åsnes
-		11371.87109375:  {1, 2}, // new: Spikbrenna
-		11270.384765625: {1, 3}, // new: Lauksjøen
-		//4 Åslia
-		//5 Knapptjernet
-		//6 Vargasen
-		//7 Lövstaholm
+		21768.318359375:   {1, 0},  // none: Hof-Finnskog
+		21780.54296875:    {1, 1},  // none: Åsnes
+		11371.87109375:    {1, 2},  // new: Spikbrenna
+		11270.384765625:   {1, 3},  // new: Lauksjøen
+		10706.1689453125:  {1, 4},  // new: Åslia
+		10775.3662109375:  {1, 5},  // new: Knapptjernet
+		8551.2998046875:   {1, 6},  // new: Vargasen
+		8549.8896484375:   {1, 7},  // new: Lövstaholm
 		3630.523193359375: {1, 8},  // old: Älgsjön
 		3678.771240234375: {1, 9},  // new: Ekshärad
 		5182.29833984375:  {1, 10}, // new: Stora Jangen
@@ -455,7 +455,7 @@ var (
 		// 2:México ---------------------------------------------------------------
 		27065.39453125: {2, 0}, // none: El Chocolate
 		//1 Otates
-		//2 Ortega
+		13419.46875: {2, 2}, // new: Ortega
 		//3 Las Minas
 		//4 Ibarrilla
 		//5 Derramadero
@@ -505,17 +505,17 @@ var (
 		7790.3369140625: {5, 10}, // old: Monte Muvri
 		7818.212890625:  {5, 11}, // none: Monte Acuto
 		// 6:Kenya ----------------------------------------------------------------
-		//0
-		//1
+		//0 Malewa
+		//1 Tarambete
 		5753.6005859375:  {6, 2}, // old: Moi North
 		5739.994140625:   {6, 3}, // new: Marula
 		4848.55517578125: {6, 4}, // fixed: Wileli
-		//5
-		//6
-		//7
-		//8
-		//9
-		//10
+		//5 Kingono
+		//6 Soysambu
+		//7 Mbaruk
+		//8 Sugunoi
+		//9 Nakuru
+		//10 Kanyawa
 		11013.076171875: {6, 11}, // new: Kanyawa - Nakura
 		// 7:Estonia --------------------------------------------------------------
 		17430.73828125:  {7, 0}, // none: Otepää
@@ -523,59 +523,59 @@ var (
 		8934.5380859375: {7, 2}, // new: Nüpli
 		8952.447265625:  {7, 3}, // new: Truuta
 		8832.642578125:  {7, 4}, // new: Koigu
-		//5
-		//6
-		//7
-		//8
-		//9
-		//10
-		//11
+		//5 Kooraste
+		//6 Elva
+		//7 Metsalaane
+		//8 Vahessaare
+		//9 Külaaseme
+		//10 Vissi
+		//11 Vellavere
 		// 8:Finland --------------------------------------------------------------
 		11414.5859375: {8, 0}, // none: Leustu
-		//1
+		//1 Lahdenkyla
 		5151.962890625: {8, 2}, // new: Saakoski
-		//3
-		//4
-		//5
-		//6
+		//3 Maahi
+		//4 Painna
+		//5 Peltola
+		//6 Paijala
 		23216.017578125: {8, 7}, // new: Ruokolahti
-		//8
+		//8 Honkanen
 		10670.9384765625: {8, 9}, // new: Venkajarvi
-		//10
-		//11
+		//10 Vehmas
+		//11 Hatanpaa
 		// 9:Greece ---------------------------------------------------------------
 		24990.927734375: {9, 0}, // none: Gravia
 		24989.751953125: {9, 1}, // new: Prosilio
-		//2
-		//3
-		//4
-		//5
-		//6
-		//7
+		//2 Mariolata
+		//3 Karoutes
+		//4 Viniani
+		//5 Delphi
+		//6 Eptalofos
+		//7 Lilea
 		5906.15625:       {9, 8},  // new: Parnassós
 		5884.07763671875: {9, 9},  // old: Bauxites
 		9025.0712890625:  {9, 10}, // new: Drosochori
-		//11
+		//11 Amfissa
 		// 10:Chile ---------------------------------------------------------------
-		//0
-		//1
+		//0 Bio Bío
+		//1 Pulpería
 		18300.140625: {10, 2}, // new: Río Lía
-		//3
-		//4
-		//5
-		//6
-		//7
+		//3 María Las Cruces
+		//4 Las Paraguas
+		//5 Rere
+		//6 El Poñen
+		//7 Laja
 		8075.86572265625: {10, 8}, // old: Yumbel
-		//9
+		//9 Río Claro
 		8425.1728515625: {10, 10}, // new: Hualqui
 		8840.3115234375: {10, 11}, // new: Chivilingo
 		// 11:Central Europe ------------------------------------------------------
-		//0
+		//0 Rouské
 		32679.244140625: {11, 1}, // old: Lukoveček
-		//2
+		//2 Raztoka
 		15770.38671875: {11, 3}, // new: Žabárna
-		//4
-		//5
+		//4 Provodovice
+		//5 Chvalčov
 		9173.345703125:   {11, 6},  // old: Vítová
 		9098.77734375:    {11, 7},  // old: Brusné
 		15078.583984375:  {11, 8},  // old: Libosváry
@@ -584,30 +584,30 @@ var (
 		8979.5126953125:  {11, 11}, // old: Příkazy
 		// 12:Japan ---------------------------------------------------------------
 		20209.443359375: {12, 0}, // new: Lake Mikawa
-		//1
-		//2
-		//3
+		//1 Kudarisawa
+		//2 Oninotaira
+		//3 Okuwacho
 		10608.0771484375: {12, 4}, // none: Habu Dam
 		10629.9638671875: {12, 5}, // new：Habucho
 		6734.7861328125:  {12, 6}, // new: Nenoue Plateau
-		//7
-		//8
-		//9
-		//10
+		//7 Tegano
+		//8 Higashino
+		//9 Hokono Lake
+		//10 Nenoue Highlands
 		7184.89013671875: {12, 11}, // old: Nakatsugawa
 		// 13:Mediterraneo --------------------------------------------------------
 		29517.841796875: {13, 0}, // new: Asco
-		//1
-		//2
-		//3
+		//1 Ponte
+		//2 Monte Cinto
+		//3 Albarello
 		20774.0390625:  {13, 4}, // new: Canpannace
 		7982.541015625: {13, 5}, // new: Serra Di Cuzzioli
-		//6
-		//7
-		//8
+		//6 Maririe
+		//7 Poggiola
+		//8 Monte Alloradu
 		9752.8134765625: {13, 9}, // old: Ravin de Finelio
-		//10
-		//11
+		//10 Cabanella
+		//11 Moltifao
 		// 14:Pacifico ------------------------------------------------------------
 		//0 Talao
 		//1 Talanghilirair
