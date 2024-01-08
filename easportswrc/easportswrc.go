@@ -444,23 +444,23 @@ var (
 		21780.54296875:  {1, 1}, // none: Åsnes
 		11371.87109375:  {1, 2}, // new: Spikbrenna
 		11270.384765625: {1, 3}, // new: Lauksjøen
-		//4
-		//5
-		//6
-		//7
+		//4 Åslia
+		//5 Knapptjernet
+		//6 Vargasen
+		//7 Lövstaholm
 		3630.523193359375: {1, 8},  // old: Älgsjön
 		3678.771240234375: {1, 9},  // new: Ekshärad
 		5182.29833984375:  {1, 10}, // new: Stora Jangen
 		5088.5087890625:   {1, 11}, // new: Sunne
 		// 2:México ---------------------------------------------------------------
 		27065.39453125: {2, 0}, // none: El Chocolate
-		//1
-		//2
-		//3
-		//4
-		//5
-		//6
-		//7
+		//1 Otates
+		//2 Ortega
+		//3 Las Minas
+		//4 Ibarrilla
+		//5 Derramadero
+		//6 El Brinco
+		10996.3623046875: {2, 7},  // new: Guanajuatito
 		8367.2353515625:  {2, 8},  // new: Alfaro
 		9197.359375:      {2, 9},  // new: Mesa Cuata
 		6154.95751953125: {2, 10}, // old: San Diego
@@ -468,40 +468,40 @@ var (
 		// 3:Croatia --------------------------------------------------------------
 		25884.58203125:  {3, 0}, // none: Bliznec
 		25880.095703125: {3, 1}, // new: Trakošćan
-		//2
-		//3
-		//4
-		//5
-		//6
-		//7
+		//2 Vrbno
+		//3 Zagorska Sela
+		//4 Kumrovec
+		//5 Grdanjci
+		//6 Stojdraga
+		//7 Mali Lipovec
 		8101.09228515625: {3, 8}, // new: Hartje
-		//9
+		//9 Kostanjevac
 		9099.501953125:  {3, 10}, // old: Krašić
 		9101.0771484375: {3, 11}, // new: Petruš Vrh
 		// 4:Portugal -------------------------------------------------------------
 		30647.3671875:   {4, 0}, // old: Baião
 		31512.115234375: {4, 1}, // old: Caminha
 		17035.876953125: {4, 2}, // new: Fridão
-		//3
-		//4
-		//5
-		//6
-		7591.076171875: {4, 7}, // new: Ervideiro
-		// : Monte Olia
-		//9
-		//10
-		//11
+		//3 Marão
+		//4 Ponte de Lima
+		//5 Viana do Castelo
+		7591.076171875: {4, 6}, // new: Ervideiro
+		//7 Celeiro
+		//8 Monte Olia Touca
+		//9 Vila Boa
+		//10 Carrazedo
+		//11 Anjos
 		// 5:Sardegna -------------------------------------------------------------
 		31854.994140625: {5, 0}, // none: Rena Majore
 		31971.994140625: {5, 1}, // new: Monte Olia
 		13663.78515625:  {5, 2}, // new: Littichedda
-		//3
-		//4
-		//5
-		//6
-		//7
-		//8
-		//9
+		//3 Ala del Sardi
+		//4 Mamone
+		//5 Li Pinnenti
+		//6 Malti
+		//7 Bassacutena
+		//8 Bortigiadas
+		//9 Sa Mela
 		7790.3369140625: {5, 10}, // old: Monte Muvri
 		7818.212890625:  {5, 11}, // none: Monte Acuto
 		// 6:Kenya ----------------------------------------------------------------
@@ -609,56 +609,56 @@ var (
 		//10
 		//11
 		// 14:Pacifico ------------------------------------------------------------
-		//0
-		//1
-		//2
-		//3
-		//4
-		//5
-		//6
+		//0 Talao
+		//1 Talanghilirair
+		//2 SungaiKunit
+		//3 Sangir Balai Janggo
+		//4 South Solok
+		//5 Kebun Raya Solok
+		//6 Batukangkung
 		5712.67041015625: {14, 7}, // old: Abai
 		6709.298828125:   {14, 8}, // fixed: Moearaikoer
 		8058.00634765625: {14, 9}, // new: Bidaralam
-		//10
+		//10 Loeboekmalaka
 		9444.4287109375: {14, 11}, // new: Gunung Tujuh
 		// 15:Oceania -------------------------------------------------------------
 		11336.53125: {15, 0}, // new: Oakleigh
-		//1
+		//1 Doctors Hill
 		7023.32177734375: {15, 2}, // none: Mangapai
 		6983.908203125:   {15, 3}, // new: Brynderwyn
-		//4
-		//5
-		//6
-		//7
-		//8
+		//4 Taipuha
+		//5 Mareretu
+		//6 Waiwera
+		//7 Tahekeroa
+		//8 Noakes Hill
 		9625.2822265625: {15, 9},  // old: Orewa
 		8901.7470703125: {15, 10}, // new: Tahekeroa - Orewa
-		//11
+		//11 Makarau
 		// 16:Scandia -------------------------------------------------------------
 		31230.755859375: {16, 0}, // old: Holtjønn
 		32164.1796875:   {16, 1}, // new: Hengeltjønn
 		17404.24609375:  {16, 2}, // new: Fyresvatn
-		//3
-		//4
-		//5
-		//6
+		//3 Russvatn
+		//4 Tovsli
+		//5 Kottjønn
+		//6 Fordol
 		5756.9423828125: {16, 7}, // new: Fyresdal
-		//8
-		//9
-		//10
-		//11
+		//8 Ljosdalstjønn
+		//9 Dagtrolltjønn
+		//10 Tovslioytjorn
+		//11 Bergsøytjønn
 		// 17:Iberia --------------------------------------------------------------
 		19315.458984375: {17, 0}, // new: Santes Creus
-		//1
+		//1 Valldossera
 		10071.61328125:  {17, 2}, // new: Campdasens
 		10075.623046875: {17, 3}, // old: Pontils
-		//4
-		//5
-		//6
-		//7
-		//8
-		//9
-		//10
+		//4 Montagut
+		//5 Aiguamúrcia
+		//6 Alforja
+		//7 Les Irles
+		//8 L'Argentera
+		//9 Les Voltes
+		//10 Montclar
 		7663.49072265625: {17, 11}, // new: Botareli
 	}
 )
