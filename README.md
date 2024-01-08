@@ -6,6 +6,8 @@
 
 このツールはWRCが出力できるテレメトリUDPパケットを受けることで動作します。あらかじめ、UDPパケット出力を有効にしておいてください。
 
+[公式テレメトリ出力ガイド](https://answers.ea.com/t5/Guides-Documentation/EA-SPORTS-WRC-How-to-use-User-Datagram-Protocol-UDP-on-PC/m-p/13178407/thread-id/1?attachment-id=757119)
+
 このツールはデフォルトのリッスンポートは「127.0.0.1:20777」です。コマンドラインオプションで変更できます。
 
 「wrc-logger.exe -listen=127.0.0.1:20778」
