@@ -162,8 +162,8 @@
 		// 2:México ---------------------------------------------------------------
 		27065.39453125: {2, 0}, // none: El Chocolate
 		//1 Otates
-		13419.46875: {2, 2}, // new: Ortega
-		//3 Las Minas
+		13419.46875:      {2, 2}, // new: Ortega
+		11845.1259765625: {2, 3}, // new: Las Minas
 		//4 Ibarrilla
 		//5 Derramadero
 		//6 El Brinco
@@ -173,9 +173,9 @@
 		6154.95751953125: {2, 10}, // old: San Diego
 		7242.689453125:   {2, 11}, // old: El Mosquito
 		// 3:Croatia --------------------------------------------------------------
-		25884.58203125:  {3, 0}, // none: Bliznec
-		25880.095703125: {3, 1}, // new: Trakošćan
-		//2 Vrbno
+		25884.58203125:   {3, 0}, // none: Bliznec
+		25880.095703125:  {3, 1}, // new: Trakošćan
+		13017.4873046875: {3, 2}, // new: Vrbno
 		//3 Zagorska Sela
 		//4 Kumrovec
 		//5 Grdanjci
@@ -189,7 +189,7 @@
 		30647.3671875:   {4, 0}, // old: Baião
 		31512.115234375: {4, 1}, // old: Caminha
 		17035.876953125: {4, 2}, // new: Fridão
-		//3 Marão
+		15447.84765625:  {4, 3}, // new?: Marão
 		//4 Ponte de Lima
 		//5 Viana do Castelo
 		7591.076171875: {4, 6}, // new: Ervideiro
