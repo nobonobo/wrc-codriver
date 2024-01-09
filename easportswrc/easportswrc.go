@@ -523,7 +523,7 @@ var (
 		8934.5380859375: {7, 2}, // new: Nüpli
 		8952.447265625:  {7, 3}, // new: Truuta
 		8832.642578125:  {7, 4}, // new: Koigu
-		//5 Kooraste
+		9093.1376953125: {7, 5}, // new: Kooraste
 		//6 Elva
 		//7 Metsalaane
 		//8 Vahessaare
@@ -538,8 +538,8 @@ var (
 		//4 Painna
 		//5 Peltola
 		//6 Paijala
-		23216.017578125: {8, 7}, // new: Ruokolahti
-		//8 Honkanen
+		23216.017578125:  {8, 7}, // new: Ruokolahti
+		10862.580078125:  {8, 8}, // new: Honkanen
 		10670.9384765625: {8, 9}, // new: Venkajarvi
 		//10 Vehmas
 		//11 Hatanpaa
@@ -555,7 +555,7 @@ var (
 		5906.15625:       {9, 8},  // new: Parnassós
 		5884.07763671875: {9, 9},  // old: Bauxites
 		9025.0712890625:  {9, 10}, // new: Drosochori
-		//11 Amfissa
+		9025.2080078125:  {9, 11}, // new: Amfissa
 		// 10:Chile ---------------------------------------------------------------
 		//0 Bio Bío
 		//1 Pulpería
@@ -573,8 +573,8 @@ var (
 		//0 Rouské
 		32679.244140625: {11, 1}, // old: Lukoveček
 		//2 Raztoka
-		15770.38671875: {11, 3}, // new: Žabárna
-		//4 Provodovice
+		15770.38671875:   {11, 3}, // new: Žabárna
+		15779.5947265625: {11, 4}, // new: Provodovice
 		//5 Chvalčov
 		9173.345703125:   {11, 6},  // old: Vítová
 		9098.77734375:    {11, 7},  // old: Brusné
