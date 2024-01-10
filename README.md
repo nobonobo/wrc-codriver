@@ -160,13 +160,13 @@
 		5182.29833984375:  {1, 10}, // new: Stora Jangen
 		5088.5087890625:   {1, 11}, // new: Sunne
 		// 2:México ---------------------------------------------------------------
-		27065.39453125: {2, 0}, // none: El Chocolate
-		//1 Otates
-		13419.46875:      {2, 2}, // new: Ortega
-		11845.1259765625: {2, 3}, // new: Las Minas
-		//4 Ibarrilla
-		//5 Derramadero
-		//6 El Brinco
+		27065.39453125:   {2, 0},  // none: El Chocolate
+		25112.0078125:    {2, 1},  // new: Otates
+		13419.46875:      {2, 2},  // new: Ortega
+		11845.1259765625: {2, 3},  // new: Las Minas
+		13308.2275390625: {2, 4},  // new: Ibarrilla
+		7556.85693359375: {2, 5},  // new: Derramadero
+		10915.162109375:  {2, 6},  //6 El Brinco
 		10996.3623046875: {2, 7},  // new: Guanajuatito
 		8367.2353515625:  {2, 8},  // new: Alfaro
 		9197.359375:      {2, 9},  // new: Mesa Cuata
@@ -181,10 +181,10 @@
 		//5 Grdanjci
 		//6 Stojdraga
 		//7 Mali Lipovec
-		8101.09228515625: {3, 8}, // new: Hartje
-		//9 Kostanjevac
-		9099.501953125:  {3, 10}, // old: Krašić
-		9101.0771484375: {3, 11}, // new: Petruš Vrh
+		8101.09228515625: {3, 8},  // new: Hartje
+		9022.259765625:   {3, 9},  // new: Kostanjevac
+		9099.501953125:   {3, 10}, // old: Krašić
+		9101.0771484375:  {3, 11}, // new: Petruš Vrh
 		// 4:Portugal -------------------------------------------------------------
 		30647.3671875:   {4, 0}, // old: Baião
 		31512.115234375: {4, 1}, // old: Caminha
@@ -230,7 +230,7 @@
 		8934.5380859375: {7, 2}, // new: Nüpli
 		8952.447265625:  {7, 3}, // new: Truuta
 		8832.642578125:  {7, 4}, // new: Koigu
-		//5 Kooraste
+		9093.1376953125: {7, 5}, // new: Kooraste
 		//6 Elva
 		//7 Metsalaane
 		//8 Vahessaare
@@ -238,15 +238,15 @@
 		//10 Vissi
 		//11 Vellavere
 		// 8:Finland --------------------------------------------------------------
-		11414.5859375: {8, 0}, // none: Leustu
-		//1 Lahdenkyla
-		5151.962890625: {8, 2}, // new: Saakoski
+		11414.5859375:   {8, 0}, // none: Leustu
+		11329.416015625: {8, 1}, // new: Lahdenkyla
+		5151.962890625:  {8, 2}, // new: Saakoski
 		//3 Maahi
 		//4 Painna
 		//5 Peltola
 		//6 Paijala
-		23216.017578125: {8, 7}, // new: Ruokolahti
-		//8 Honkanen
+		23216.017578125:  {8, 7}, // new: Ruokolahti
+		10862.580078125:  {8, 8}, // new: Honkanen
 		10670.9384765625: {8, 9}, // new: Venkajarvi
 		//10 Vehmas
 		//11 Hatanpaa
@@ -262,7 +262,7 @@
 		5906.15625:       {9, 8},  // new: Parnassós
 		5884.07763671875: {9, 9},  // old: Bauxites
 		9025.0712890625:  {9, 10}, // new: Drosochori
-		//11 Amfissa
+		9025.2080078125:  {9, 11}, // new: Amfissa
 		// 10:Chile ---------------------------------------------------------------
 		//0 Bio Bío
 		//1 Pulpería
@@ -272,16 +272,16 @@
 		//5 Rere
 		//6 El Poñen
 		//7 Laja
-		8075.86572265625: {10, 8}, // old: Yumbel
-		//9 Río Claro
-		8425.1728515625: {10, 10}, // new: Hualqui
-		8840.3115234375: {10, 11}, // new: Chivilingo
+		8075.86572265625: {10, 8},  // old: Yumbel
+		8551.7421875:     {10, 9},  // new: Río Claro
+		8425.1728515625:  {10, 10}, // new: Hualqui
+		8840.3115234375:  {10, 11}, // new: Chivilingo
 		// 11:Central Europe ------------------------------------------------------
 		//0 Rouské
 		32679.244140625: {11, 1}, // old: Lukoveček
 		//2 Raztoka
-		15770.38671875: {11, 3}, // new: Žabárna
-		//4 Provodovice
+		15770.38671875:   {11, 3}, // new: Žabárna
+		15779.5947265625: {11, 4}, // new: Provodovice
 		//5 Chvalčov
 		9173.345703125:   {11, 6},  // old: Vítová
 		9098.77734375:    {11, 7},  // old: Brusné
@@ -291,7 +291,7 @@
 		8979.5126953125:  {11, 11}, // old: Příkazy
 		// 12:Japan ---------------------------------------------------------------
 		20209.443359375: {12, 0}, // new: Lake Mikawa
-		//1 Kudarisawa
+		20237.0234375:   {12, 1}, // new: Kudarisawa
 		//2 Oninotaira
 		//3 Okuwacho
 		10608.0771484375: {12, 4}, // none: Habu Dam

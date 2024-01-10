@@ -453,13 +453,13 @@ var (
 		5182.29833984375:  {1, 10}, // new: Stora Jangen
 		5088.5087890625:   {1, 11}, // new: Sunne
 		// 2:México ---------------------------------------------------------------
-		27065.39453125: {2, 0}, // none: El Chocolate
-		//1 Otates
-		13419.46875:      {2, 2}, // new: Ortega
-		11845.1259765625: {2, 3}, // new: Las Minas
-		//4 Ibarrilla
-		//5 Derramadero
-		//6 El Brinco
+		27065.39453125:   {2, 0},  // none: El Chocolate
+		25112.0078125:    {2, 1},  // new: Otates
+		13419.46875:      {2, 2},  // new: Ortega
+		11845.1259765625: {2, 3},  // new: Las Minas
+		13308.2275390625: {2, 4},  // new: Ibarrilla
+		7556.85693359375: {2, 5},  // new: Derramadero
+		10915.162109375:  {2, 6},  //6 El Brinco
 		10996.3623046875: {2, 7},  // new: Guanajuatito
 		8367.2353515625:  {2, 8},  // new: Alfaro
 		9197.359375:      {2, 9},  // new: Mesa Cuata
