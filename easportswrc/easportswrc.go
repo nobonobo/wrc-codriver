@@ -482,9 +482,9 @@ var (
 		31512.115234375: {4, 1}, // old: Caminha
 		17035.876953125: {4, 2}, // new: Fridão
 		15447.84765625:  {4, 3}, // new?: Marão
-		//4 Ponte de Lima
-		//5 Viana do Castelo
-		7591.076171875: {4, 6}, // new: Ervideiro
+		15045.11328125:  {4, 4}, // new: Ponte de Lima
+		8186.74609375:   {4, 5}, // new: Viana do Castelo
+		7591.076171875:  {4, 6}, // new: Ervideiro
 		//7 Celeiro
 		//8 Monte Olia Touca
 		//9 Vila Boa
