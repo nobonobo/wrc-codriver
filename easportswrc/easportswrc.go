@@ -465,11 +465,11 @@ var (
 		6154.95751953125: {2, 10}, // new: San Diego
 		7242.689453125:   {2, 11}, // new: El Mosquito
 		// 3:Croatia --------------------------------------------------------------
-		25884.58203125:   {3, 0}, // none: Bliznec
+		25884.58203125:   {3, 0}, // new: Bliznec
 		25880.095703125:  {3, 1}, // new: Trakošćan
 		13017.4873046875: {3, 2}, // new: Vrbno
-		//3 Zagorska Sela
-		//4 Kumrovec
+		13012.927734375:  {3, 3}, // new: Zagorska Sela
+		13264.982421875:  {3, 4}, // new: Kumrovec
 		//5 Grdanjci
 		//6 Stojdraga
 		//7 Mali Lipovec
