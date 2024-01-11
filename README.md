@@ -183,19 +183,19 @@
 	- [x] Kostanjevac
 	- [x] Krašić
 	- [x] Petruš Vrh
-- [ ] Vodafone Rally de Portugal
+- [x] Vodafone Rally de Portugal
 	- [x] Baião
 	- [x] Caminha
 	- [x] Fridão
 	- [x] Marão
-	- [ ] Ponte de Lima
-	- [ ] Viana do Castelo
+	- [x] Ponte de Lima
+	- [x] Viana do Castelo
 	- [x] Ervideiro
-	- [ ] Celeiro
-	- [ ] Touca
-	- [ ] Vila Boa
-	- [ ] Carrazedo
-	- [ ] Anjos
+	- [x] Celeiro
+	- [x] Touca
+	- [x] Vila Boa
+	- [x] Carrazedo
+	- [x] Anjos
 - [ ] Rally Italia Sardegna
 	- [ ] Rena Majore
 	- [x] Monte Olia
