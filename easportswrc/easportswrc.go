@@ -498,8 +498,8 @@ var (
 		16802.18359375:   {5, 4}, // new: Mamone
 		7913.38134765625: {5, 5}, // new:  Li Pinnenti
 		8093.1669921875:  {5, 6}, // new: Malti
-		//7 Bassacutena
-		//8 Bortigiadas
+		7856.53857421875: {5, 7}, // new: Bassacutena
+		9376.2978515625:  {5, 8}, // new: Bortigiadas
 		//9 Sa Mela
 		7790.3369140625: {5, 10}, // old: Monte Muvri
 		7818.212890625:  {5, 11}, // none: Monte Acuto

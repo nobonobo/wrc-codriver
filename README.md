@@ -204,8 +204,8 @@
 	- [x] Mamone
 	- [x] Li Pinnenti
 	- [x] Malti
-	- [ ] Bassacutena
-	- [ ] Bortigiadas
+	- [x] Bassacutena
+	- [x] Bortigiadas
 	- [ ] Sa Mela
 	- [x] Monte Muvri
 	- [ ] Monte Acuto
