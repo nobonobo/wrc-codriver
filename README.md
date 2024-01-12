@@ -201,9 +201,9 @@
 	- [x] Monte Olia
 	- [x] Littichedda
 	- [x] Ala del Sardi
-	- [ ] Mamone
-	- [ ] Li Pinnenti
-	- [ ] Malti
+	- [x] Mamone
+	- [x] Li Pinnenti
+	- [x] Malti
 	- [ ] Bassacutena
 	- [ ] Bortigiadas
 	- [ ] Sa Mela
