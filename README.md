@@ -206,9 +206,9 @@
 	- [x] Malti
 	- [x] Bassacutena
 	- [x] Bortigiadas
-	- [ ] Sa Mela
+	- [x] Sa Mela
 	- [x] Monte Muvri
-	- [ ] Monte Acuto
+	- [x] Monte Acuto
 - [ ] Safari Rally Kenya
   - [ ] Malewa
   - [ ] Tarambete
