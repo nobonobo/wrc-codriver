@@ -197,10 +197,10 @@
 	- [x] Carrazedo
 	- [x] Anjos
 - [ ] Rally Italia Sardegna
-	- [ ] Rena Majore
+	- [x] Rena Majore
 	- [x] Monte Olia
 	- [x] Littichedda
-	- [ ] Ala del Sardi
+	- [x] Ala del Sardi
 	- [ ] Mamone
 	- [ ] Li Pinnenti
 	- [ ] Malti

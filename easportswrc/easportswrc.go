@@ -491,10 +491,10 @@ var (
 		7798.4951171875: {4, 10}, // new: Carrazedo
 		7733.7841796875: {4, 11}, // new: Anjos
 		// 5:Sardegna -------------------------------------------------------------
-		31854.994140625: {5, 0}, // none: Rena Majore
+		31854.994140625: {5, 0}, // new: Rena Majore
 		31971.994140625: {5, 1}, // new: Monte Olia
 		13663.78515625:  {5, 2}, // new: Littichedda
-		//3 Ala del Sardi
+		18540.404296875: {5, 3}, // new: Ala del Sardi
 		//4 Mamone
 		//5 Li Pinnenti
 		//6 Malti
