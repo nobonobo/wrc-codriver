@@ -222,7 +222,7 @@
   - [x] Nakuru
   - [x] Kanyawa
   - [x] Kanyawa - Nakura
-- [ ] Rally Estonia
+- [x] Rally Estonia
   - [x] Otepää
   - [x] Rebaste
   - [x] Nüpli
@@ -232,9 +232,9 @@
   - [x] Elva
   - [x] Metsalaane
   - [x] Vahessaare
-  - [ ] Külaaseme
-  - [ ] Vissi
-  - [ ] Vellavere
+  - [x] Külaaseme
+  - [x] Vissi
+  - [x] Vellavere
 - [ ] SECTO Rally Finland
   - [ ] Leustu
   - [x] Lahdenkyla
