@@ -223,15 +223,15 @@
   - [x] Kanyawa
   - [x] Kanyawa - Nakura
 - [ ] Rally Estonia
-  - [ ] Otepää
+  - [x] Otepää
   - [x] Rebaste
   - [x] Nüpli
   - [x] Truuta
   - [x] Koigu
   - [x] Kooraste
-  - [ ] Elva
-  - [ ] Metsalaane
-  - [ ] Vahessaare
+  - [x] Elva
+  - [x] Metsalaane
+  - [x] Vahessaare
   - [ ] Külaaseme
   - [ ] Vissi
   - [ ] Vellavere
