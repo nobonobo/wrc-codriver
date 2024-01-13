@@ -196,7 +196,7 @@
 	- [x] Vila Boa
 	- [x] Carrazedo
 	- [x] Anjos
-- [ ] Rally Italia Sardegna
+- [x] Rally Italia Sardegna
 	- [x] Rena Majore
 	- [x] Monte Olia
 	- [x] Littichedda
@@ -209,18 +209,18 @@
 	- [x] Sa Mela
 	- [x] Monte Muvri
 	- [x] Monte Acuto
-- [ ] Safari Rally Kenya
-  - [ ] Malewa
-  - [ ] Tarambete
+- [x] Safari Rally Kenya
+  - [x] Malewa
+  - [x] Tarambete
   - [x] Moi North
   - [x] Marula
   - [x] Wileli
-  - [ ] Kingono
-  - [ ] Soysambu
-  - [ ] Mbaruk
-  - [ ] Sugunoi
-  - [ ] Nakuru
-  - [ ] Kanyawa
+  - [x] Kingono
+  - [x] Soysambu
+  - [x] Mbaruk
+  - [x] Sugunoi
+  - [x] Nakuru
+  - [x] Kanyawa
   - [x] Kanyawa - Nakura
 - [ ] Rally Estonia
   - [ ] Otepää
