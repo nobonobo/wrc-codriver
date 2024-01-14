@@ -235,19 +235,19 @@
   - [x] Külaaseme
   - [x] Vissi
   - [x] Vellavere
-- [ ] SECTO Rally Finland
-  - [ ] Leustu
+- [x] SECTO Rally Finland
+  - [x] Leustu
   - [x] Lahdenkyla
   - [x] Saakoski
-  - [ ] Maahi
-  - [ ] Painna
-  - [ ] Peltola
-  - [ ] Paijala
+  - [x] Maahi
+  - [x] Painna
+  - [x] Peltola
+  - [x] Paijala
   - [x] Ruokolahti
   - [x] Honkanen
   - [x] Venkajarvi
-  - [ ] Vehmas
-  - [ ] Hatanpaa
+  - [x] Vehmas
+  - [x] Hatanpaa
 - [ ] EKO ACROPOLIS Rally Greece
   - [ ] Gravia
   - [x] Prosilio
@@ -256,7 +256,7 @@
   - [ ] Viniani
   - [ ] Delphi
   - [ ] Eptalofos
-  - [ ] Lilea
+  - [x] Lilea
   - [x] Parnassós
   - [x] Bauxites
   - [x] Drosochori
