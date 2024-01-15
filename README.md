@@ -251,14 +251,14 @@
 - [ ] EKO ACROPOLIS Rally Greece
   - [ ] Gravia
   - [x] Prosilio
-  - [ ] Mariolata
+  - [x] Mariolata
   - [ ] Karoutes
-  - [ ] Viniani
-  - [ ] Delphi
-  - [ ] Eptalofos
+  - [x] Viniani
+  - [x] Delphi
+  - [x] Eptalofos
   - [x] Lilea
   - [x] Parnassós
-  - [x] Bauxites
+  - [ ] Bauxites
   - [x] Drosochori
   - [x] Amfissa
 - [ ] BIO BÍO Rally Chile
