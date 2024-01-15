@@ -252,13 +252,13 @@
   - [ ] Gravia
   - [x] Prosilio
   - [x] Mariolata
-  - [ ] Karoutes
+  - [x] Karoutes
   - [x] Viniani
   - [x] Delphi
   - [x] Eptalofos
   - [x] Lilea
   - [x] Parnassós
-  - [ ] Bauxites
+  - [x] Bauxites
   - [x] Drosochori
   - [x] Amfissa
 - [ ] BIO BÍO Rally Chile
