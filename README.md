@@ -276,11 +276,11 @@
   - [x] Hualqui
   - [x] Chivilingo
 - [ ] Central Europe Rally
-  - [ ] Rouské
+  - [x] Rouské
   - [x] Lukoveček
   - [x] Raztoka
   - [x] Žabárna
-  - [ ] Provodovice
+  - [x] Provodovice
   - [x] Chvalčov
   - [x] Vítová
   - [x] Brusné
