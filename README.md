@@ -248,8 +248,8 @@
   - [x] Venkajarvi
   - [x] Vehmas
   - [x] Hatanpaa
-- [ ] EKO ACROPOLIS Rally Greece
-  - [ ] Gravia
+- [x] EKO ACROPOLIS Rally Greece
+  - [x] Gravia
   - [x] Prosilio
   - [x] Mariolata
   - [x] Karoutes
@@ -265,11 +265,11 @@
   - [ ] Bio Bío
   - [ ] Pulpería
   - [x] Río Lía
-  - [ ] María Las Cruces
-  - [ ] Las Paraguas
-  - [ ] Rere
-  - [ ] El Poñen
-  - [ ] Laja
+  - [x] María Las Cruces
+  - [x] Las Paraguas
+  - [x] Rere
+  - [x] El Poñen
+  - [x] Laja
   - [x] Yumbel
   - [x] Río Claro
   - [x] Hualqui
@@ -277,10 +277,10 @@
 - [ ] Central Europe Rally
   - [ ] Rouské
   - [x] Lukoveček
-  - [ ] Raztoka
+  - [x] Raztoka
   - [x] Žabárna
-  - [x] Provodovice
-  - [ ] Chvalčov
+  - [ ] Provodovice
+  - [x] Chvalčov
   - [x] Vítová
   - [x] Brusné
   - [x] Libosváry
