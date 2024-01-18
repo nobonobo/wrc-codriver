@@ -277,29 +277,29 @@
   - [x] Chivilingo
 - [ ] Central Europe Rally
   - [x] Rouské
-  - [x] Lukoveček
+  - [.] Lukoveček
   - [x] Raztoka
   - [x] Žabárna
   - [x] Provodovice
   - [x] Chvalčov
-  - [x] Vítová
-  - [x] Brusné
-  - [x] Libosváry
+  - [.] Vítová
+  - [.] Brusné
+  - [.] Libosváry
   - [x] Rusava
-  - [x] Osíčko
-  - [x] Příkazy
-- [ ] Forum8 Rally Japan
+  - [.] Osíčko
+  - [.] Příkazy
+- [x] Forum8 Rally Japan
   - [x] Lake Mikawa
   - [x] Kudarisawa
   - [x] Oninotaira
   - [x] Okuwacho
-  - [ ] Habu Dam
+  - [x] Habu Dam
   - [x] Habucho
   - [x] Nenoue Plateau
-  - [ ] Tegano
-  - [ ] Higashino
-  - [ ] Hokono Lake
-  - [ ] Nenoue Highlands
+  - [x] Tegano
+  - [x] Higashino
+  - [x] Hokono Lake
+  - [x] Nenoue Highlands
   - [x] Nakatsugawa
 - [ ] Rally Mediterraneo
   - [x] Asco
