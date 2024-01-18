@@ -291,8 +291,8 @@
 - [ ] Forum8 Rally Japan
   - [x] Lake Mikawa
   - [x] Kudarisawa
-  - [ ] Oninotaira
-  - [ ] Okuwacho
+  - [x] Oninotaira
+  - [x] Okuwacho
   - [ ] Habu Dam
   - [x] Habucho
   - [x] Nenoue Plateau
