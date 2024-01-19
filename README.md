@@ -275,19 +275,19 @@
   - [x] Río Claro
   - [x] Hualqui
   - [x] Chivilingo
-- [ ] Central Europe Rally
+- [x] Central Europe Rally
   - [x] Rouské
-  - [.] Lukoveček
+  - [x] Lukoveček
   - [x] Raztoka
   - [x] Žabárna
   - [x] Provodovice
   - [x] Chvalčov
-  - [.] Vítová
-  - [.] Brusné
-  - [.] Libosváry
+  - [x] Vítová
+  - [x] Brusné
+  - [x] Libosváry
   - [x] Rusava
-  - [.] Osíčko
-  - [.] Příkazy
+  - [x] Osíčko
+  - [x] Příkazy
 - [x] Forum8 Rally Japan
   - [x] Lake Mikawa
   - [x] Kudarisawa
