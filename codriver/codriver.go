@@ -188,7 +188,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			return nil
 		}
 		lastTime = packet.StageCurrentTime
-		info, err := nextInfo(scanner, packet.StageCurrentDistance+float64(packet.VehicleSpeed)+Offset)
+		info, err := nextInfo(scanner, packet.StageCurrentDistance+2*float64(packet.VehicleSpeed)+Offset)
 		if err != nil {
 			log.Println("[snd]", err)
 			logCloser()
