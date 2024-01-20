@@ -147,6 +147,13 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 	completed := ""
 	return func(packet *easportswrc.PacketEASportsWRC) error {
 		logName := filepath.Join("log", fmt.Sprintf("%v.log", packet.StageLength))
+		v, ok := easportswrc.Stages[packet.StageLength]
+		if ok {
+			loc := easportswrc.Locations[v.Location]
+			dir := fmt.Sprintf("%02d.%s", v.Location+1, easportswrc.LocationKeys[v.Location])
+			name := fmt.Sprintf("%02d.%s", v.Stage+1, loc.Stages[v.Stage])
+			logName = filepath.Join("pacenotes", dir, name+".log")
+		}
 		if lastTime > 0 && packet.StageCurrentTime == 0 {
 			if logFile != nil {
 				logCloser()

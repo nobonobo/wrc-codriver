@@ -5,7 +5,6 @@ import (
 	"flag"
 	"log"
 	"os"
-	"path/filepath"
 
 	"github.com/aethiopicuschan/nanoda"
 )
@@ -41,7 +40,7 @@ var (
 )
 
 func init() {
-	fp, err := os.Open(filepath.Join("log", "base.json"))
+	fp, err := os.Open("base.json")
 	if err != nil {
 		log.Fatal(err)
 	}

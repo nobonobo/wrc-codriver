@@ -43,7 +43,7 @@
 - 「-offset -50..50」: 読み上げのタイミング変更（メートル単位）
 
 ## ログのフォーマット
-ファイル名：「log/ステージ長.log」
+ファイル名：「pacenotes/##.ロケーション/##.ステージ.log」
 
 ```
 0,straight,unknown,50
@@ -304,16 +304,16 @@
 - [ ] Rally Mediterraneo
   - [x] Asco
   - [ ] Ponte
-  - [ ] Monte Cinto
-  - [ ] Albarello
+  - [x] Monte Cinto
+  - [x] Albarello
   - [x] Capannace
   - [x] Serra Di Cuzzioli
-  - [ ] Maririe
-  - [ ] Poggiola
-  - [ ] Monte Alloradu
-  - [x] Ravin de Finelio
-  - [ ] Cabanella
-  - [ ] Moltifao
+  - [x] Maririe
+  - [x] Poggiola
+  - [x] Monte Alloradu
+  - [.] Ravin de Finelio
+  - [x] Cabanella
+  - [x] Moltifao
 - [ ] Agon By AOC Rally Pacifico
   - [ ] Talao
   - [ ] Talanghilirair

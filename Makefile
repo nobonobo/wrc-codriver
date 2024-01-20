@@ -24,8 +24,8 @@ version:
 
 sync:
 	cmd /c \(robocopy dist\log log /E /XO\) \^\& IF %ERRORLEVEL% LEQ 1 exit 0
+	go run ./logmove.go
 
-update: sync
-	git add log
-	go build .
+update: build sync
+	git add pacenotes
 	cmd /c copy /Y wrc-logger.exe dist\\wrc-logger.exe

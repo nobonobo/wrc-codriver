@@ -152,6 +152,26 @@ type Stage struct {
 }
 
 var (
+	LocationKeys = []string{
+		"monte-carlo",
+		"sweden",
+		"mexico",
+		"croatia",
+		"portugal",
+		"sardegna",
+		"kenya",
+		"estonia",
+		"finland",
+		"greece",
+		"chile",
+		"europe",
+		"japan",
+		"mediterraneo",
+		"pacifico",
+		"oceania",
+		"scandia",
+		"iberia",
+	}
 	Locations = []Location{
 		// 0
 		{"Rallye Monte-Carlo", []string{
@@ -580,7 +600,7 @@ var (
 		15078.583984375:  {11, 8},  // new: Libosváry
 		14987.3271484375: {11, 9},  // new: Rusava
 		9267.7421875:     {11, 10}, // new: Osíčko
-		8979.5126953125:  {11, 11}, // old: Příkazy
+		8979.5126953125:  {11, 11}, // new: Příkazy
 		// 12:Japan ---------------------------------------------------------------
 		20209.443359375:  {12, 0},  // new: Lake Mikawa
 		20237.0234375:    {12, 1},  // new: Kudarisawa
@@ -597,16 +617,16 @@ var (
 		// 13:Mediterraneo --------------------------------------------------------
 		29517.841796875: {13, 0}, // new: Asco
 		//1 Ponte
-		//2 Monte Cinto
-		//3 Albarello
-		20774.0390625:  {13, 4}, // new: Canpannace
-		7982.541015625: {13, 5}, // new: Serra Di Cuzzioli
-		//6 Maririe
-		//7 Poggiola
-		//8 Monte Alloradu
-		9752.8134765625: {13, 9}, // old: Ravin de Finelio
-		//10 Cabanella
-		//11 Moltifao
+		15444.12109375:   {13, 2},  // new: Monte Cinto
+		16482.353515625:  {13, 3},  // new: Albarello
+		20774.0390625:    {13, 4},  // new: Canpannace
+		7982.541015625:   {13, 5},  // new: Serra Di Cuzzioli
+		8828.4140625:     {13, 6},  // new: Maririe
+		8782.9814453125:  {13, 7},  // new: Poggiola
+		11075.619140625:  {13, 8},  // new: Monte Alloradu
+		9752.8134765625:  {13, 9},  // old: Ravin de Finelio
+		10414.5029296875: {13, 10}, // new: Cabanella
+		11520.50390625:   {13, 11}, // new: Moltifao
 		// 14:Pacifico ------------------------------------------------------------
 		//0 Talao
 		//1 Talanghilirair
