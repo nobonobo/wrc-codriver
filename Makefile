@@ -13,11 +13,11 @@ build:
 	go build .
 
 run: build
-	./wrc-logger.exe
+	./wrc-codriver.exe
 
 pack: build sync
-	pack.bat wrc-logger-$(VERSION).zip
-	#powershell Compress-Archive -Path dist -Force -DestinationPath wrc-logger-$(VERSION).zip
+	pack.bat wrc-codriver-$(VERSION).zip
+	#powershell Compress-Archive -Path dist -Force -DestinationPath wrc-codriver-$(VERSION).zip
 
 version:
 	@echo $(VERSION) | cat
@@ -28,4 +28,4 @@ sync:
 
 update: build sync
 	git add pacenotes
-	cmd /c copy /Y wrc-logger.exe dist\\wrc-logger.exe
+	cmd /c copy /Y wrc-codriver.exe dist\\wrc-codriver.exe

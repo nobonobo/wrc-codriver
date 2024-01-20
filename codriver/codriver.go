@@ -16,7 +16,7 @@ import (
 	"github.com/aethiopicuschan/nanoda"
 	"github.com/ebitengine/oto/v3"
 	"github.com/hajimehoshi/ebiten/v2/audio/wav"
-	"github.com/nobonobo/wrc-logger/easportswrc"
+	"github.com/nobonobo/wrc-codriver/easportswrc"
 )
 
 func speech(ctx *oto.Context, s nanoda.Synthesizer, q nanoda.AudioQuery) error {

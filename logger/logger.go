@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/nobonobo/wrc-logger/easportswrc"
+	"github.com/nobonobo/wrc-codriver/easportswrc"
 	"gocv.io/x/gocv"
 )
 

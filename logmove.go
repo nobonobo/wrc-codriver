@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/nobonobo/wrc-logger/easportswrc"
+	"github.com/nobonobo/wrc-codriver/easportswrc"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 		dir := fmt.Sprintf("%02d.%s", v.Location+1, easportswrc.LocationKeys[v.Location])
 		name := fmt.Sprintf("%02d.%s", v.Stage+1, loc.Stages[v.Stage])
 		dst := filepath.Join("pacenotes", dir, name+".log")
-		if _, err := os.Stat(dst); os.IsExist(err) {
+		if _, err := os.Stat(dst); err == nil {
 			continue
 		}
 		log.Println("move:", src, "->", dst)

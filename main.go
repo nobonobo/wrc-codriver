@@ -6,9 +6,9 @@ import (
 	"log"
 	"net"
 
-	"github.com/nobonobo/wrc-logger/codriver"
-	"github.com/nobonobo/wrc-logger/easportswrc"
-	"github.com/nobonobo/wrc-logger/logger"
+	"github.com/nobonobo/wrc-codriver/codriver"
+	"github.com/nobonobo/wrc-codriver/easportswrc"
+	"github.com/nobonobo/wrc-codriver/logger"
 )
 
 type Config struct {

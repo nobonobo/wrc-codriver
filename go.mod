@@ -1,4 +1,4 @@
-module github.com/nobonobo/wrc-logger
+module github.com/nobonobo/wrc-codriver
 
 go 1.21.5
 
