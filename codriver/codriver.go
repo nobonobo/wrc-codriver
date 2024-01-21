@@ -39,9 +39,7 @@ func speech(ctx *oto.Context, s nanoda.Synthesizer, q nanoda.AudioQuery) error {
 
 type Info struct {
 	Position float64
-	Mark     string
-	Icon     string
-	Dist     string
+	Words    []string
 }
 
 var (
@@ -69,7 +67,7 @@ func nextInfo(scanner *bufio.Scanner, d float64) (*Info, error) {
 	line := scanner.Text()
 	log.Println("[snd]", d, "line", line)
 	fields := strings.Split(line, ",")
-	if len(fields) != 4 {
+	if len(fields) < 2 {
 		return nil, fmt.Errorf("invalid line: %s", line)
 	}
 	next, err := strconv.ParseFloat(fields[0], 64)
@@ -78,9 +76,7 @@ func nextInfo(scanner *bufio.Scanner, d float64) (*Info, error) {
 	}
 	res := &Info{
 		Position: next,
-		Mark:     fields[1],
-		Icon:     fields[2],
-		Dist:     fields[3],
+		Words:    fields[1:],
 	}
 	if next+100 < d {
 		log.Println("[snd]", "skip", res)
@@ -117,15 +113,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 	if err := s.LoadModelsFromStyleId(nanoda.StyleId(ActorID)); err != nil {
 		log.Fatal(err)
 	}
-	qMarks, err := Init(s, Dict.Marks)
-	if err != nil {
-		log.Fatal(err)
-	}
-	qIcons, err := Init(s, Dict.Icons)
-	if err != nil {
-		log.Fatal(err)
-	}
-	qDists, err := Init(s, Dict.Dists)
+	qDicts, err := Init(s, Dict)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -205,54 +193,26 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			// 次の情報まで未到達
 			return nil
 		}
-		words := []nanoda.AudioQuery{}
 		//log.Println("[snd]", packet.StageCurrentDistance, info)
-		qm, ok := qMarks[info.Mark]
-		if ok {
-			words = append(words, qm)
-		} else {
-			if info.Mark != "unknown" {
-				q, err := makeAudioQuery(s, info.Mark)
+		for _, w := range info.Words {
+			if w == "unknown" || w == "0" {
+				continue
+			}
+			qm, ok := qDicts[w]
+			if !ok {
+				q, err := makeAudioQuery(s, w)
 				if err != nil {
 					log.Println("[snd]", err)
-				} else {
-					words = append(words, q)
+					continue
 				}
+				qm = q
 			}
-		}
-		qi, ok := qIcons[info.Icon]
-		if ok {
-			words = append(words, qi)
-		} else {
-			if info.Icon != "unknown" {
-				q, err := makeAudioQuery(s, info.Icon)
-				if err != nil {
-					log.Println("[snd]", err)
-				} else {
-					words = append(words, q)
-				}
+			if w == "finish" {
+				logCloser()
+				completed = logName // 読み込み済み
+				log.Println("[snd]", logName, "completed")
 			}
-		}
-		qd, ok := qDists[info.Dist]
-		if ok {
-			words = append(words, qd)
-		} else {
-			if info.Dist != "0" {
-				q, err := makeAudioQuery(s, info.Dist)
-				if err != nil {
-					log.Println("[snd]", err)
-				} else {
-					words = append(words, q)
-				}
-			}
-		}
-		if info.Mark == "finish" {
-			logCloser()
-			completed = logName // 読み込み済み
-			log.Println("[snd]", logName, "completed")
-		}
-		for _, w := range words {
-			speechCh <- w
+			speechCh <- qm
 		}
 		return nil
 	}

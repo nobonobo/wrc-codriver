@@ -29,14 +29,8 @@ type AQ struct {
 	Text string `json:"text"`
 }
 
-type Base struct {
-	Marks map[string]AQ `json:"marks"`
-	Icons map[string]AQ `json:"icons"`
-	Dists map[string]AQ `json:"dists"`
-}
-
 var (
-	Dict Base
+	Dict map[string]AQ
 )
 
 func init() {
