@@ -1,4 +1,4 @@
-package codriver
+package main
 
 import (
 	"encoding/json"
@@ -13,7 +13,6 @@ var (
 	ActorID = 3
 	Speed   = 1.5
 	Pitch   = 0.0
-	Offset  = 5.0
 	Volume  = 1.8
 )
 
@@ -22,7 +21,6 @@ func init() {
 	flag.Float64Var(&Speed, "speed", Speed, "speed")
 	flag.Float64Var(&Pitch, "pitch", Pitch, "pitch")
 	flag.Float64Var(&Volume, "volume", Volume, "volume")
-	flag.Float64Var(&Offset, "offset", Offset, "offset [-50..50]")
 }
 
 type AQ struct {

@@ -305,3 +305,7 @@ late, early
 
 ◇long、 half-long、short
 コーナーの長さを表す表現が増加した。特にshortが増えたが、ちょっと「ショット」に聞こえる時もある。long、 half-long、shortのそれぞれの表現は割と正確になった気がする。（ダートラリー時代は「extra, extra, extra,long」とか、「おい、おめえ、ちょっとそれ気持ちいいから言ってるだけだろ」という感じの時もあった）
+
+Monte Carlo in winter only（冬のモンテカルロ限定）
+patch-now -> ice-now -> patch-now -> dry-now
+積雪路面開始（部分的に雪に覆われてる？）->アイス路面開始->積雪路面開始->乾燥路面開始

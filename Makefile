@@ -11,6 +11,7 @@ OPENCV_RUNTIME := C:\\opencv\\build\\install\\x64\\mingw\\bin
 
 build:
 	go build .
+	go build ./tts-engine
 
 run: build
 	./wrc-codriver.exe
@@ -28,4 +29,3 @@ sync:
 
 update: build sync
 	git add pacenotes
-	cmd /c copy /Y wrc-codriver.exe dist\\wrc-codriver.exe

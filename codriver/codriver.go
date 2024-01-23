@@ -3,43 +3,39 @@ package codriver
 import (
 	"bufio"
 	"context"
+	"flag"
 	"fmt"
 	"io"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strconv"
 	"strings"
 	"sync"
-	"time"
 
-	"github.com/aethiopicuschan/nanoda"
-	"github.com/ebitengine/oto/v3"
-	"github.com/hajimehoshi/ebiten/v2/audio/wav"
 	"github.com/nobonobo/wrc-codriver/easportswrc"
 )
-
-func speech(ctx *oto.Context, s nanoda.Synthesizer, q nanoda.AudioQuery) error {
-	w, err := s.Synthesis(q, nanoda.StyleId(ActorID))
-	if err != nil {
-		return err
-	}
-	defer w.Close()
-	decoded, err := wav.DecodeWithoutResampling(w)
-	if err != nil {
-		return err
-	}
-	p := ctx.NewPlayer(decoded)
-	p.Play()
-	for p.IsPlaying() {
-		time.Sleep(20 * time.Millisecond)
-	}
-	return nil
-}
 
 type Info struct {
 	Position float64
 	Words    []string
+}
+
+var (
+	ActorID = 3
+	Speed   = 1.5
+	Pitch   = 0.0
+	Volume  = 1.8
+	Offset  float64
+)
+
+func init() {
+	flag.IntVar(&ActorID, "actor", ActorID, "actor id")
+	flag.Float64Var(&Speed, "speed", Speed, "speed")
+	flag.Float64Var(&Pitch, "pitch", Pitch, "pitch")
+	flag.Float64Var(&Volume, "volume", Volume, "volume")
+	flag.Float64Var(&Offset, "offset", Offset, "offset [-50..50]")
 }
 
 var (
@@ -70,7 +66,7 @@ func nextInfo(scanner *bufio.Scanner, d float64) (*Info, error) {
 	if len(fields) < 2 {
 		return nil, fmt.Errorf("invalid line: %s", line)
 	}
-	next, err := strconv.ParseFloat(fields[0], 64)
+	next, err := strconv.ParseFloat(strings.TrimSpace(fields[0]), 64)
 	if err != nil {
 		return nil, fmt.Errorf("invalid line: %s", line)
 	}
@@ -90,49 +86,58 @@ func nextInfo(scanner *bufio.Scanner, d float64) (*Info, error) {
 	return empty, nil
 }
 
-func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
-	v, err := nanoda.NewVoicevox(
-		"voicevox_core/voicevox_core.dll",
-		"voicevox_core/open_jtalk_dic_utf_8-1.11",
-		"voicevox_core/model")
+func startEngine(ctx context.Context, in <-chan []string) error {
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
+	cmd := exec.CommandContext(ctx, ".\\tts-engine.exe",
+		"-actor", fmt.Sprintf("%d", ActorID),
+		"-speed", fmt.Sprintf("%f", Speed),
+		"-pitch", fmt.Sprintf("%f", Pitch),
+		"-volume", fmt.Sprintf("%f", Volume),
+	)
+	cmd.Stderr = os.Stderr
+	cmd.Stdout = os.Stdout
+	stdin, err := cmd.StdinPipe()
 	if err != nil {
-		log.Fatal(err)
+		return fmt.Errorf("tts-engine pipe failed: %w", err)
 	}
-	ctxOto, _, err := oto.NewContext(&oto.NewContextOptions{
-		SampleRate:   48000,
-		ChannelCount: 1,
-		Format:       oto.FormatSignedInt16LE,
-	})
-	if err != nil {
-		log.Fatal(err)
+	defer stdin.Close()
+	if err := cmd.Start(); err != nil {
+		return fmt.Errorf("tts-engine start failed: %w", err)
 	}
-	s, err := v.NewSynthesizer()
-	if err != nil {
-		log.Fatal(err)
-	}
-	if err := s.LoadModelsFromStyleId(nanoda.StyleId(ActorID)); err != nil {
-		log.Fatal(err)
-	}
-	qDicts, err := Init(s, Dict)
-	if err != nil {
-		log.Fatal(err)
-	}
-	speechCh := make(chan nanoda.AudioQuery, 10)
-	go func() {
-		for {
-			select {
-			case <-ctx.Done():
-				return
-			case q := <-speechCh:
-				speech(ctxOto, s, q)
-			}
+	for {
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case words := <-in:
+			fmt.Fprintln(stdin, strings.Join(words, " "))
 		}
-	}()
+	}
+}
+
+func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
+	speechCh := make(chan []string, 10)
 	var logFile io.ReadCloser
 	var scanner *bufio.Scanner
 	logCloser := func() {}
 	lastTime := float32(0)
 	completed := ""
+	go func() {
+		for {
+			func() {
+				c, cancel := context.WithCancel(context.Background())
+				defer cancel()
+				select {
+				case <-ctx.Done():
+					return
+				default:
+				}
+				if err := startEngine(c, speechCh); err != nil {
+					log.Println("[snd]", err)
+				}
+			}()
+		}
+	}()
 	return func(packet *easportswrc.PacketEASportsWRC) error {
 		logName := filepath.Join("log", fmt.Sprintf("%v.log", packet.StageLength))
 		v, ok := easportswrc.Stages[packet.StageLength]
@@ -194,26 +199,20 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			return nil
 		}
 		//log.Println("[snd]", packet.StageCurrentDistance, info)
+		req := []string{}
 		for _, w := range info.Words {
+			w = strings.TrimSpace(w)
 			if w == "unknown" || w == "0" {
 				continue
 			}
-			qm, ok := qDicts[w]
-			if !ok {
-				q, err := makeAudioQuery(s, w)
-				if err != nil {
-					log.Println("[snd]", err)
-					continue
-				}
-				qm = q
-			}
+			req = append(req, w)
 			if w == "finish" {
 				logCloser()
 				completed = logName // 読み込み済み
 				log.Println("[snd]", logName, "completed")
 			}
-			speechCh <- qm
 		}
+		speechCh <- req
 		return nil
 	}
 }

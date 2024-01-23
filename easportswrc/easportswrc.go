@@ -446,9 +446,9 @@ var (
 	}
 	Stages = map[float64]StageID{
 		// 0:Monte-Carlo ----------------------------------------------------------
-		18799.8984375:    {0, 0},  // new: La Bollène-Vésubie - Peïra Cava
+		18799.8984375:    {0, 0},  // fixed: La Bollène-Vésubie - Peïra Cava
 		18606.03125:      {0, 1},  // new: Peïra Cava - La Bollène-Vésubie
-		12349.2734375:    {0, 2},  // new: La Bollène-Vésubie - Col de Turini
+		12349.2734375:    {0, 2},  // fixed: La Bollène-Vésubie - Col de Turini
 		12167.2060546875: {0, 3},  // new: Pra d'Alart
 		6745.568359375:   {0, 4},  // new: La Maïris
 		6680.1611328125:  {0, 5},  // new: Baisse de Patronel
