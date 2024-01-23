@@ -23,11 +23,13 @@ type Info struct {
 }
 
 var (
-	ActorID = 3
-	Speed   = 1.5
-	Pitch   = 0.0
-	Volume  = 1.8
-	Offset  float64
+	ActorID           = 3
+	Speed             = 1.8
+	Pitch             = 0.0
+	Volume            = 1.8
+	Offset            = 5.0
+	PrePhonemeLength  = 0.05
+	PostPhonemeLength = 0.05
 )
 
 func init() {
@@ -36,6 +38,8 @@ func init() {
 	flag.Float64Var(&Pitch, "pitch", Pitch, "pitch")
 	flag.Float64Var(&Volume, "volume", Volume, "volume")
 	flag.Float64Var(&Offset, "offset", Offset, "offset [-50..50]")
+	flag.Float64Var(&PrePhonemeLength, "pre-phoneme", PrePhonemeLength, "pre-phoneme-length")
+	flag.Float64Var(&PostPhonemeLength, "post-phoneme", PostPhonemeLength, "post-phoneme-length")
 }
 
 var (
@@ -94,6 +98,8 @@ func startEngine(ctx context.Context, in <-chan []string) error {
 		"-speed", fmt.Sprintf("%f", Speed),
 		"-pitch", fmt.Sprintf("%f", Pitch),
 		"-volume", fmt.Sprintf("%f", Volume),
+		"-pre-phoneme", fmt.Sprintf("%f", PrePhonemeLength),
+		"-post-phoneme", fmt.Sprintf("%f", PostPhonemeLength),
 	)
 	cmd.Stderr = os.Stderr
 	cmd.Stdout = os.Stdout

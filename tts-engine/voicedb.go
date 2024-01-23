@@ -10,10 +10,12 @@ import (
 )
 
 var (
-	ActorID = 3
-	Speed   = 1.5
-	Pitch   = 0.0
-	Volume  = 1.8
+	ActorID           = 3
+	Speed             = 1.5
+	Pitch             = 0.0
+	Volume            = 1.8
+	PrePhonemeLength  = 0.05
+	PostPhonemeLength = 0.05
 )
 
 func init() {
@@ -21,6 +23,8 @@ func init() {
 	flag.Float64Var(&Speed, "speed", Speed, "speed")
 	flag.Float64Var(&Pitch, "pitch", Pitch, "pitch")
 	flag.Float64Var(&Volume, "volume", Volume, "volume")
+	flag.Float64Var(&PrePhonemeLength, "pre-phoneme", PrePhonemeLength, "pre-phoneme-length")
+	flag.Float64Var(&PostPhonemeLength, "post-phoneme", PostPhonemeLength, "post-phoneme-length")
 }
 
 type AQ struct {
@@ -50,6 +54,8 @@ func makeAudioQuery(s nanoda.Synthesizer, text string) (nanoda.AudioQuery, error
 	q.SpeedScale = Speed
 	q.PitchScale = Pitch
 	q.VolumeScale = Volume
+	q.PrePhonemeLength = PrePhonemeLength
+	q.PostPhonemeLength = PostPhonemeLength
 	return q, nil
 }
 
