@@ -8,13 +8,13 @@ import (
 	"io"
 	"log"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strconv"
 	"strings"
 	"sync"
 
 	"github.com/nobonobo/wrc-codriver/easportswrc"
+	"github.com/nobonobo/wrc-codriver/engine"
 )
 
 type Info struct {
@@ -23,23 +23,11 @@ type Info struct {
 }
 
 var (
-	ActorID           = 3
-	Speed             = 1.8
-	Pitch             = 0.0
-	Volume            = 1.8
-	Offset            = 5.0
-	PrePhonemeLength  = 0.05
-	PostPhonemeLength = 0.05
+	Offset = 0.0
 )
 
 func init() {
-	flag.IntVar(&ActorID, "actor", ActorID, "actor id")
-	flag.Float64Var(&Speed, "speed", Speed, "speed")
-	flag.Float64Var(&Pitch, "pitch", Pitch, "pitch")
-	flag.Float64Var(&Volume, "volume", Volume, "volume")
 	flag.Float64Var(&Offset, "offset", Offset, "offset [-50..50]")
-	flag.Float64Var(&PrePhonemeLength, "pre-phoneme", PrePhonemeLength, "pre-phoneme-length")
-	flag.Float64Var(&PostPhonemeLength, "post-phoneme", PostPhonemeLength, "post-phoneme-length")
 }
 
 var (
@@ -90,39 +78,8 @@ func nextInfo(scanner *bufio.Scanner, d float64) (*Info, error) {
 	return empty, nil
 }
 
-func startEngine(ctx context.Context, in <-chan []string) error {
-	ctx, cancel := context.WithCancel(ctx)
-	defer cancel()
-	cmd := exec.CommandContext(ctx, ".\\tts-engine.exe",
-		"-actor", fmt.Sprintf("%d", ActorID),
-		"-speed", fmt.Sprintf("%f", Speed),
-		"-pitch", fmt.Sprintf("%f", Pitch),
-		"-volume", fmt.Sprintf("%f", Volume),
-		"-pre-phoneme", fmt.Sprintf("%f", PrePhonemeLength),
-		"-post-phoneme", fmt.Sprintf("%f", PostPhonemeLength),
-	)
-	cmd.Stderr = os.Stderr
-	cmd.Stdout = os.Stdout
-	stdin, err := cmd.StdinPipe()
-	if err != nil {
-		return fmt.Errorf("tts-engine pipe failed: %w", err)
-	}
-	defer stdin.Close()
-	if err := cmd.Start(); err != nil {
-		return fmt.Errorf("tts-engine start failed: %w", err)
-	}
-	for {
-		select {
-		case <-ctx.Done():
-			return ctx.Err()
-		case words := <-in:
-			fmt.Fprintln(stdin, strings.Join(words, " "))
-		}
-	}
-}
-
 func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
-	speechCh := make(chan []string, 10)
+	speechCh := make(chan string, 10)
 	var logFile io.ReadCloser
 	var scanner *bufio.Scanner
 	logCloser := func() {}
@@ -138,7 +95,7 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 					return
 				default:
 				}
-				if err := startEngine(c, speechCh); err != nil {
+				if err := engine.StartEngine(c, speechCh); err != nil {
 					log.Println("[snd]", err)
 				}
 			}()
@@ -205,20 +162,18 @@ func Setup(ctx context.Context) func(*easportswrc.PacketEASportsWRC) error {
 			return nil
 		}
 		//log.Println("[snd]", packet.StageCurrentDistance, info)
-		req := []string{}
 		for _, w := range info.Words {
 			w = strings.TrimSpace(w)
 			if w == "unknown" || w == "0" {
 				continue
 			}
-			req = append(req, w)
 			if w == "finish" {
 				logCloser()
 				completed = logName // 読み込み済み
 				log.Println("[snd]", logName, "completed")
 			}
+			speechCh <- w
 		}
-		speechCh <- req
 		return nil
 	}
 }

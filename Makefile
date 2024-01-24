@@ -11,7 +11,6 @@ OPENCV_RUNTIME := C:\\opencv\\build\\install\\x64\\mingw\\bin
 
 build:
 	go build .
-	go build ./tts-engine
 
 run: build
 	./wrc-codriver.exe

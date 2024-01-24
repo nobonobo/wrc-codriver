@@ -8,6 +8,5 @@ XCOPY /E /Y log dist\log\
 COPY /B /Y %OPENCV_RUNTIME%\* dist\
 COPY /B /Y onnxruntime.dll dist\onnxruntime.dll
 COPY /B /Y wrc-codriver.exe dist\wrc-codriver.exe
-COPY /B /Y tts-engine.exe dist\tts-engine.exe
 COPY /B /Y base.json dist\base.json
 powershell Compress-Archive -Path dist -Force -DestinationPath %1
